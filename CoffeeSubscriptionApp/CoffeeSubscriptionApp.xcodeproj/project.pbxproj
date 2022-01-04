@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD7930EB278218180029230A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EA278218180029230A /* AppDelegate.swift */; };
 		AD7930ED278218180029230A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EC278218180029230A /* SceneDelegate.swift */; };
-		AD7930EF278218180029230A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EE278218180029230A /* ViewController.swift */; };
+		AD7930EF278218180029230A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EE278218180029230A /* MenuViewController.swift */; };
 		AD7930F2278218180029230A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7930F0278218180029230A /* Main.storyboard */; };
 		AD7930F42782181A0029230A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7930F32782181A0029230A /* Assets.xcassets */; };
 		AD7930F72782181A0029230A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7930F52782181A0029230A /* LaunchScreen.storyboard */; };
@@ -18,6 +18,16 @@
 		AD79310E2782181A0029230A /* CoffeeSubscriptionAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD79310D2782181A0029230A /* CoffeeSubscriptionAppUITestsLaunchTests.swift */; };
 		AD79311C27821B660029230A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AD79311B27821B660029230A /* FirebaseAuth */; };
 		AD79311E27821B660029230A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AD79311D27821B660029230A /* FirebaseFirestore */; };
+		ADA5688327831C5100DA4B7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688227831C5100DA4B7F /* HomeViewController.swift */; };
+		ADA5688527832ECC00DA4B7F /* CafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688427832ECC00DA4B7F /* CafeCell.swift */; };
+		ADA5688727835BFD00DA4B7F /* cafeNames.json in Resources */ = {isa = PBXBuildFile; fileRef = ADA5688627835BFC00DA4B7F /* cafeNames.json */; };
+		ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688827835C2F00DA4B7F /* Cafe.swift */; };
+		ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688A278371CF00DA4B7F /* NetworkManager.swift */; };
+		ADA5688D2784261500DA4B7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688C2784261400DA4B7F /* Constants.swift */; };
+		ADA5689127844E8500DA4B7F /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689027844E8500DA4B7F /* ItemDetailsViewController.swift */; };
+		ADA568932784502900DA4B7F /* PlanDurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA568922784502800DA4B7F /* PlanDurationViewController.swift */; };
+		ADA5689527845C6200DA4B7F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689427845C6200DA4B7F /* MenuItemCell.swift */; };
+		ADA568972784635600DA4B7F /* PlanDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA568962784635500DA4B7F /* PlanDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +51,7 @@
 		AD7930E7278218180029230A /* CoffeeSubscriptionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeSubscriptionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7930EA278218180029230A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7930EC278218180029230A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD7930EE278218180029230A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD7930EE278218180029230A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AD7930F1278218180029230A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD7930F32782181A0029230A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD7930F62782181A0029230A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +61,16 @@
 		AD7931072782181A0029230A /* CoffeeSubscriptionAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeSubscriptionAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD79310B2782181A0029230A /* CoffeeSubscriptionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeSubscriptionAppUITests.swift; sourceTree = "<group>"; };
 		AD79310D2782181A0029230A /* CoffeeSubscriptionAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeSubscriptionAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ADA5688227831C5100DA4B7F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ADA5688427832ECC00DA4B7F /* CafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCell.swift; sourceTree = "<group>"; };
+		ADA5688627835BFC00DA4B7F /* cafeNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cafeNames.json; sourceTree = "<group>"; };
+		ADA5688827835C2F00DA4B7F /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		ADA5688A278371CF00DA4B7F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ADA5688C2784261400DA4B7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ADA5689027844E8500DA4B7F /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
+		ADA568922784502800DA4B7F /* PlanDurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDurationViewController.swift; sourceTree = "<group>"; };
+		ADA5689427845C6200DA4B7F /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		ADA568962784635500DA4B7F /* PlanDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				AD7930E9278218180029230A /* CoffeeSubscriptionApp */,
+				AD7930EC278218180029230A /* SceneDelegate.swift */,
+				AD7930EA278218180029230A /* AppDelegate.swift */,
 				AD7931002782181A0029230A /* CoffeeSubscriptionAppTests */,
 				AD79310A2782181A0029230A /* CoffeeSubscriptionAppUITests */,
 				AD7930E8278218180029230A /* Products */,
@@ -132,6 +154,10 @@
 			isa = PBXGroup;
 			children = (
 				AD7930F32782181A0029230A /* Assets.xcassets */,
+				ADA5688627835BFC00DA4B7F /* cafeNames.json */,
+				ADA5688827835C2F00DA4B7F /* Cafe.swift */,
+				ADA5688A278371CF00DA4B7F /* NetworkManager.swift */,
+				ADA5688C2784261400DA4B7F /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,11 +174,23 @@
 		AD79312127821B970029230A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AD7930EA278218180029230A /* AppDelegate.swift */,
-				AD7930EC278218180029230A /* SceneDelegate.swift */,
-				AD7930EE278218180029230A /* ViewController.swift */,
+				ADA5688F2784277900DA4B7F /* cells */,
+				AD7930EE278218180029230A /* MenuViewController.swift */,
+				ADA5688227831C5100DA4B7F /* HomeViewController.swift */,
+				ADA5689027844E8500DA4B7F /* ItemDetailsViewController.swift */,
+				ADA568922784502800DA4B7F /* PlanDurationViewController.swift */,
+				ADA568962784635500DA4B7F /* PlanDetailsViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		ADA5688F2784277900DA4B7F /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				ADA5688427832ECC00DA4B7F /* CafeCell.swift */,
+				ADA5689427845C6200DA4B7F /* MenuItemCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7930F72782181A0029230A /* LaunchScreen.storyboard in Resources */,
+				ADA5688727835BFD00DA4B7F /* cafeNames.json in Resources */,
 				AD7930F42782181A0029230A /* Assets.xcassets in Resources */,
 				AD7930F2278218180029230A /* Main.storyboard in Resources */,
 			);
@@ -293,9 +332,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD7930EF278218180029230A /* ViewController.swift in Sources */,
+				AD7930EF278218180029230A /* MenuViewController.swift in Sources */,
 				AD7930EB278218180029230A /* AppDelegate.swift in Sources */,
+				ADA5689527845C6200DA4B7F /* MenuItemCell.swift in Sources */,
+				ADA5689127844E8500DA4B7F /* ItemDetailsViewController.swift in Sources */,
+				ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */,
+				ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */,
+				ADA568972784635600DA4B7F /* PlanDetailsViewController.swift in Sources */,
+				ADA5688527832ECC00DA4B7F /* CafeCell.swift in Sources */,
 				AD7930ED278218180029230A /* SceneDelegate.swift in Sources */,
+				ADA5688327831C5100DA4B7F /* HomeViewController.swift in Sources */,
+				ADA568932784502900DA4B7F /* PlanDurationViewController.swift in Sources */,
+				ADA5688D2784261500DA4B7F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
