@@ -17,17 +17,17 @@ class NetworkManager {
                 return data
             }
         } catch {
-            print("error 1: \(error)")
+            print("error: \(error.localizedDescription)")
         }
         return nil
     }
     
-    static func parse(jsonData: Data) -> Cafe? {
+    static func parse(jsonData: Data) -> [Cafe]? {
         do {
-            let decodedData = try JSONDecoder().decode(Cafe.self, from: jsonData)
+            let decodedData = try JSONDecoder().decode([Cafe].self, from: jsonData)
             return decodedData
         } catch {
-            print("error 2: \(error.localizedDescription)")
+            print("error: \(error.localizedDescription)")
         }
         return nil
     }

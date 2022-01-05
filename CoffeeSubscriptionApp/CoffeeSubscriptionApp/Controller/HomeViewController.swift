@@ -8,8 +8,10 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-  
+    
     @IBOutlet weak var cafesCollectionView: UICollectionView!
+    
+    var cafes = [Cafe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,28 +19,29 @@ class HomeViewController: UIViewController {
         cafesCollectionView.delegate = self
         cafesCollectionView.dataSource = self
         
-        
-//        let jsonData = NetworkManager.readLocalJSONFile(forName: "cafeNames")
-//        if let data = jsonData {
-//            if let sampleRecordObj = NetworkManager.parse(jsonData: data) {
-//                print("users list: \(sampleRecordObj.cafe)")
-//                
-//            }
-//        }
+        let jsonData = NetworkManager.readLocalJSONFile(forName: "cafeNames")
+        if let data = jsonData {
+            if let decodedData = NetworkManager.parse(jsonData: data) {
+                for cafe in decodedData{
+                    
+                    cafes.append(cafe)
+                    
+                }
+            }
+        }
     }
 }
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        cafes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.cafeCellID, for: indexPath) as! CafeCell
-        cell.name.text = "cafe 1"
+        cell.name.text = cafes[indexPath.row].cafeName
         return cell
     }
-    
     
 }

@@ -7,12 +7,9 @@
 
 import Foundation
 
+
 struct Cafe : Codable{
     
-    var cafe: [CafeName]
+    var cafeName: String?
     
-}
-
-struct CafeName :Codable{
-    var cafeName : String
 }
