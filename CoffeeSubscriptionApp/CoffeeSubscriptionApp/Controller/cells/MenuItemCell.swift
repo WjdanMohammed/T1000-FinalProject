@@ -11,6 +11,19 @@ class MenuItemCell: UICollectionViewCell {
     
     @IBOutlet weak var itemName: UILabel!
     
+    @IBOutlet weak var itemPrice: UILabel!
+    
+    override var isSelected: Bool {
+            didSet {
+                if self.isSelected {
+                    backgroundColor = #colorLiteral(red: 0.8182985187, green: 0.9071113467, blue: 1, alpha: 1)
+                }
+                else {
+                    backgroundColor = .white
+                }
+            }
+        }
+    
     override class func awakeFromNib() {
     
     }

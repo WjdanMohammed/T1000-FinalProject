@@ -1,0 +1,60 @@
+
+[
+    
+    {
+        "id":"latte",
+        "name":"Latte",
+        "category":"coffee",
+        "coffeeCategory":"hot drinks",
+        "price": 16
+    }
+    ,
+    {
+        "id":"cappuccino",
+        "name":"Cappuccino",
+        "category":"coffee",
+        "coffeeCategory":"hot drinks",
+        "price": 16
+    },
+    {
+        "id":"espresso",
+        "name":"Espresso",
+        "category":"coffee",
+        "coffeeCategory":"hot drinks",
+        "price": 10
+    },
+    {
+        "id":"americano",
+        "name":"Americano",
+        "category":"coffee",
+        "coffeeCategory":"hot drinks",
+        "price": 12
+    },
+    {
+        "id":"hotChocolate",
+        "name":"Hot Chocolate",
+        "category":"hot drinks",
+        "price": 18
+    },
+    {
+        "id":"coffeeOfTheDay",
+        "name":"Coffee of the day",
+        "category":"coffee",
+        "coffeeCategory":"hot drinks",
+        "price": 10
+    },
+    {
+        "id":"flatWhite",
+        "name":"Flat white",
+        "category":"coffee",
+        "coffeeCategory":"hot drinks",
+        "price": 16
+    },
+    {
+        "id":"gatheringCoffee",
+        "name":"Gathering coffee",
+        "category":"coffee",
+        "coffeeCategory":"hot drinks",
+        "price": 35
+    }
+]

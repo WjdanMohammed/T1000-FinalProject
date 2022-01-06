@@ -22,9 +22,19 @@ class NetworkManager {
         return nil
     }
     
-    static func parse(jsonData: Data) -> [Cafe]? {
+    static func parseCafe(jsonData: Data) -> [Cafe]? {
         do {
             let decodedData = try JSONDecoder().decode([Cafe].self, from: jsonData)
+            return decodedData
+        } catch {
+            print("error: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
+    static func parseMenu(jsonData: Data) -> [MenuItem]? {
+        do {
+            let decodedData = try JSONDecoder().decode([MenuItem].self, from: jsonData)
             return decodedData
         } catch {
             print("error: \(error.localizedDescription)")

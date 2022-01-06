@@ -11,4 +11,5 @@ class K {
     
     static let cafeCellID = "cafeCellID"
     static let itemCellID = "itemCellID"
+    static let navigateToMenu = "menu"
 }
