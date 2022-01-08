@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AD0B5A1F27871975002F0904 /* SelectedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A1E27871975002F0904 /* SelectedItemCell.swift */; };
+		AD0B5A212789A6E3002F0904 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A202789A6E3002F0904 /* SignUpViewController.swift */; };
+		AD0B5A232789B788002F0904 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD0B5A222789B788002F0904 /* GoogleService-Info.plist */; };
+		AD0B5A252789BE54002F0904 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A242789BE54002F0904 /* DatabaseManager.swift */; };
+		AD0B5A272789CEA6002F0904 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A262789CEA6002F0904 /* TabBarViewController.swift */; };
+		AD0B5A292789EB83002F0904 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A282789EB83002F0904 /* LogInViewController.swift */; };
+		AD0B5A2B278A0E75002F0904 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A2A278A0E75002F0904 /* StringExtention.swift */; };
 		AD7930EB278218180029230A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EA278218180029230A /* AppDelegate.swift */; };
 		AD7930ED278218180029230A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EC278218180029230A /* SceneDelegate.swift */; };
 		AD7930EF278218180029230A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EE278218180029230A /* MenuViewController.swift */; };
@@ -54,6 +60,12 @@
 
 /* Begin PBXFileReference section */
 		AD0B5A1E27871975002F0904 /* SelectedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemCell.swift; sourceTree = "<group>"; };
+		AD0B5A202789A6E3002F0904 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = CoffeeSubscriptionApp/Controller/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
+		AD0B5A222789B788002F0904 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD0B5A242789BE54002F0904 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AD0B5A262789CEA6002F0904 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		AD0B5A282789EB83002F0904 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = CoffeeSubscriptionApp/Controller/LogInViewController.swift; sourceTree = SOURCE_ROOT; };
+		AD0B5A2A278A0E75002F0904 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		AD7930E7278218180029230A /* CoffeeSubscriptionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeSubscriptionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7930EA278218180029230A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7930EC278218180029230A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 				AD7930EC278218180029230A /* SceneDelegate.swift */,
 				AD7930F32782181A0029230A /* Assets.xcassets */,
 				AD7930F82782181A0029230A /* Info.plist */,
+				AD0B5A222789B788002F0904 /* GoogleService-Info.plist */,
 				AD79311F27821B8A0029230A /* Model */,
 				AD79312027821B910029230A /* View */,
 				AD79312127821B970029230A /* Controller */,
@@ -170,10 +183,12 @@
 				ADA5689A2785D8F900DA4B7F /* menu1.json */,
 				ADA5688827835C2F00DA4B7F /* Cafe.swift */,
 				ADA5688A278371CF00DA4B7F /* NetworkManager.swift */,
+				AD0B5A242789BE54002F0904 /* DatabaseManager.swift */,
 				ADA5688C2784261400DA4B7F /* Constants.swift */,
 				ADA56898278592E100DA4B7F /* Plan.swift */,
 				ADA5689E2785DC2800DA4B7F /* MenuItem.swift */,
 				ADFD0B542786FB48008E7126 /* PaymentService.swift */,
+				AD0B5A2A278A0E75002F0904 /* StringExtention.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				ADA5688F2784277900DA4B7F /* cells */,
+				AD0B5A202789A6E3002F0904 /* SignUpViewController.swift */,
+				AD0B5A282789EB83002F0904 /* LogInViewController.swift */,
+				AD0B5A262789CEA6002F0904 /* TabBarViewController.swift */,
 				AD7930EE278218180029230A /* MenuViewController.swift */,
 				ADA5688227831C5100DA4B7F /* HomeViewController.swift */,
 				ADA5689027844E8500DA4B7F /* ItemDetailsViewController.swift */,
@@ -326,6 +344,7 @@
 				ADA5688727835BFD00DA4B7F /* cafeNames.json in Resources */,
 				AD7930F42782181A0029230A /* Assets.xcassets in Resources */,
 				AD7930F2278218180029230A /* Main.storyboard in Resources */,
+				AD0B5A232789B788002F0904 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,13 +374,18 @@
 				ADA5689527845C6200DA4B7F /* MenuItemCell.swift in Sources */,
 				ADA5689127844E8500DA4B7F /* ItemDetailsViewController.swift in Sources */,
 				ADFD0B552786FB48008E7126 /* PaymentService.swift in Sources */,
+				AD0B5A212789A6E3002F0904 /* SignUpViewController.swift in Sources */,
 				ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */,
 				ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */,
+				AD0B5A292789EB83002F0904 /* LogInViewController.swift in Sources */,
+				AD0B5A252789BE54002F0904 /* DatabaseManager.swift in Sources */,
 				ADA568972784635600DA4B7F /* PlanDetailsViewController.swift in Sources */,
 				ADA5689F2785DC2800DA4B7F /* MenuItem.swift in Sources */,
 				AD0B5A1F27871975002F0904 /* SelectedItemCell.swift in Sources */,
 				ADA5688527832ECC00DA4B7F /* CafeCell.swift in Sources */,
+				AD0B5A272789CEA6002F0904 /* TabBarViewController.swift in Sources */,
 				AD7930ED278218180029230A /* SceneDelegate.swift in Sources */,
+				AD0B5A2B278A0E75002F0904 /* StringExtention.swift in Sources */,
 				ADA5688327831C5100DA4B7F /* HomeViewController.swift in Sources */,
 				ADA56899278592E200DA4B7F /* Plan.swift in Sources */,
 				ADA568932784502900DA4B7F /* PlanDurationViewController.swift in Sources */,

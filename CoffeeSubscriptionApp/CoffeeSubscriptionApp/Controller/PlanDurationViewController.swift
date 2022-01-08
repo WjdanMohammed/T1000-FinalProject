@@ -19,11 +19,10 @@ class PlanDurationViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     var locationManager : CLLocationManager!
     var currentLocationString = "Current location"
+    let mkAnnotation: MKPointAnnotation = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
     }
     
@@ -38,17 +37,17 @@ class PlanDurationViewController: UIViewController, MKMapViewDelegate, CLLocatio
         mapView.setRegion(region, animated: true)
         
         // Get user's Current Location and Drop a pin
-        let mkAnnotation: MKPointAnnotation = MKPointAnnotation()
+        
         mkAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude)
         mkAnnotation.title = self.setUsersClosestLocation(mLattitude: userLocation.coordinate.latitude, mLongitude: userLocation.coordinate.longitude)
         mapView.addAnnotation(mkAnnotation)
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error - locationManager: \(error.localizedDescription)")
     }
     
-    //MARK:- Intance Methods
     
     func setUsersClosestLocation(mLattitude: CLLocationDegrees, mLongitude: CLLocationDegrees) -> String {
         let geoCoder = CLGeocoder()
