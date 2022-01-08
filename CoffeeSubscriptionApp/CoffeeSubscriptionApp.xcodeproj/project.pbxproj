@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0B5A1F27871975002F0904 /* SelectedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A1E27871975002F0904 /* SelectedItemCell.swift */; };
 		AD7930EB278218180029230A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EA278218180029230A /* AppDelegate.swift */; };
 		AD7930ED278218180029230A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EC278218180029230A /* SceneDelegate.swift */; };
 		AD7930EF278218180029230A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EE278218180029230A /* MenuViewController.swift */; };
@@ -31,6 +32,7 @@
 		ADA56899278592E200DA4B7F /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA56898278592E100DA4B7F /* Plan.swift */; };
 		ADA5689B2785D8FA00DA4B7F /* menu1.json in Resources */ = {isa = PBXBuildFile; fileRef = ADA5689A2785D8F900DA4B7F /* menu1.json */; };
 		ADA5689F2785DC2800DA4B7F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689E2785DC2800DA4B7F /* MenuItem.swift */; };
+		ADFD0B552786FB48008E7126 /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD0B542786FB48008E7126 /* PaymentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD0B5A1E27871975002F0904 /* SelectedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemCell.swift; sourceTree = "<group>"; };
 		AD7930E7278218180029230A /* CoffeeSubscriptionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeSubscriptionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7930EA278218180029230A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7930EC278218180029230A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 		ADA56898278592E100DA4B7F /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		ADA5689A2785D8F900DA4B7F /* menu1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu1.json; sourceTree = "<group>"; };
 		ADA5689E2785DC2800DA4B7F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		ADFD0B542786FB48008E7126 /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		ADFD0B562786FBF8008E7126 /* CoffeeSubscriptionApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeSubscriptionApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,7 @@
 		AD7930E9278218180029230A /* CoffeeSubscriptionApp */ = {
 			isa = PBXGroup;
 			children = (
+				ADFD0B562786FBF8008E7126 /* CoffeeSubscriptionApp.entitlements */,
 				AD7930EA278218180029230A /* AppDelegate.swift */,
 				AD7930EC278218180029230A /* SceneDelegate.swift */,
 				AD7930F32782181A0029230A /* Assets.xcassets */,
@@ -167,6 +173,7 @@
 				ADA5688C2784261400DA4B7F /* Constants.swift */,
 				ADA56898278592E100DA4B7F /* Plan.swift */,
 				ADA5689E2785DC2800DA4B7F /* MenuItem.swift */,
+				ADFD0B542786FB48008E7126 /* PaymentService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +205,7 @@
 			children = (
 				ADA5688427832ECC00DA4B7F /* CafeCell.swift */,
 				ADA5689427845C6200DA4B7F /* MenuItemCell.swift */,
+				AD0B5A1E27871975002F0904 /* SelectedItemCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -346,10 +354,12 @@
 				AD7930EB278218180029230A /* AppDelegate.swift in Sources */,
 				ADA5689527845C6200DA4B7F /* MenuItemCell.swift in Sources */,
 				ADA5689127844E8500DA4B7F /* ItemDetailsViewController.swift in Sources */,
+				ADFD0B552786FB48008E7126 /* PaymentService.swift in Sources */,
 				ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */,
 				ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */,
 				ADA568972784635600DA4B7F /* PlanDetailsViewController.swift in Sources */,
 				ADA5689F2785DC2800DA4B7F /* MenuItem.swift in Sources */,
+				AD0B5A1F27871975002F0904 /* SelectedItemCell.swift in Sources */,
 				ADA5688527832ECC00DA4B7F /* CafeCell.swift in Sources */,
 				AD7930ED278218180029230A /* SceneDelegate.swift in Sources */,
 				ADA5688327831C5100DA4B7F /* HomeViewController.swift in Sources */,
@@ -532,8 +542,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoffeeSubscriptionApp/CoffeeSubscriptionApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeSubscriptionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -548,6 +561,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.CoffeeSubscriptionApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -559,8 +573,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoffeeSubscriptionApp/CoffeeSubscriptionApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeSubscriptionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -575,6 +592,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.CoffeeSubscriptionApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

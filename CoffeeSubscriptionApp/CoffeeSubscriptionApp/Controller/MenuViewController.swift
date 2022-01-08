@@ -17,15 +17,14 @@ class MenuViewController: UIViewController {
     
     var menuItems = [MenuItem]()
     
-//    var cart = [MenuItem]()
-//    var indexPath = IndexPath()
+    var cart = [MenuItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
-//        menuCollectionView.allowsMultipleSelection = true
+        menuCollectionView.allowsMultipleSelection = true
         
         let jsonData = NetworkManager.readLocalJSONFile(forName: "menu1")
         if let data = jsonData {
@@ -39,33 +38,14 @@ class MenuViewController: UIViewController {
         }
     }
     
-//    func getSelectedItems(){
-//        //        let cart = menuCollectionView.indexPathsForSelectedItems
-//        //        if let selectedItems = cart {
-//        //        for indexPath in selectedItems{
-//        switch selectedDay.selectedSegmentIndex{
-//
-//        case Day.firstDay.rawValue :
-//            Order.order.orderDetails[0] = [menuItems[indexPath.row]]
-//            print("day 1 checkkk")
-//
-//        case Day.secondDay.rawValue :
-//            Order.order.orderDetails[1] = [menuItems[indexPath.row]]
-//
-//        case Day.thirdDay.rawValue :
-//            Order.order.orderDetails[2] = [menuItems[indexPath.row]]
-//
-//        case Day.fourthDay.rawValue :
-//            Order.order.orderDetails[3] = [menuItems[indexPath.row]]
-//
-//        case Day.fifthDay.rawValue :
-//            Order.order.orderDetails[4] = [menuItems[indexPath.row]]
-//        default:
-//            print("")
-//        }
-//
-//        print(Order.order.orderDetails)
-//    }
+    @IBAction func confirmSelectionButtonClicked(_ sender: Any) {
+
+        Plan.plan.orderDetails.removeAll()
+        Plan.plan.orderDetails.append(contentsOf: cart)
+        performSegue(withIdentifier: K.navigateToPlanSetup, sender: self)
+        
+    }
+   
 }
 
 extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -87,15 +67,14 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        Plan.plan.orderDetails.append(menuItems[indexPath.row])
-        print(Plan.plan.selectedCafe)
-//        self.indexPath = indexPath
-        
+        cart.append(menuItems[indexPath.row])
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        cart.removeAll { $0.id == menuItems[indexPath.row].id }
     }
     
 }
 
-//enum Day : Int {
-//    case firstDay = 0, secondDay = 1, thirdDay = 2, fourthDay = 3, fifthDay = 4
-//}
 

@@ -16,12 +16,6 @@ class Plan {
     var deliveryTime = ""
     var orderDetails = [MenuItem]()
     
-//    var orderDetails = [0 : [MenuItem](),
-//                        1 : [MenuItem](),
-//                        2 : [MenuItem](),
-//                        3 : [MenuItem](),
-//                        4 : [MenuItem]()]
-    
     var orderStatus = ""
     
     static var plan = Plan()
