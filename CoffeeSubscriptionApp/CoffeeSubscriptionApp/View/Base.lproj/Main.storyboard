@@ -336,13 +336,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kUZ-sc-mEf">
-                                <rect key="frame" x="217" y="147" width="147" height="54"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kUZ-sc-mEf">
+                                <rect key="frame" x="217" y="147" width="147" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="401-Wl-cMM"/>
+                                </constraints>
                             </datePicker>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="bM3-eV-6i5">
-                                <rect key="frame" x="258" y="209" width="106" height="51"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="bM3-eV-6i5">
+                                <rect key="frame" x="258" y="209" width="106" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="t9J-NH-zLZ"/>
+                                </constraints>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-V4-3cW">
                                 <rect key="frame" x="52" y="164" width="42" height="21"/>
@@ -358,13 +362,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-F1-JwP">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-F1-JwP">
                                 <rect key="frame" x="20" y="297" width="374" height="293"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="293" id="YjB-49-Zj3"/>
+                                </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vk-Am-UVW">
-                                <rect key="frame" x="327" y="782" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vk-Am-UVW">
+                                <rect key="frame" x="327" y="733" width="67" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
                                 <connections>
@@ -374,6 +379,17 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oKF-2b-CXx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bM3-eV-6i5" firstAttribute="trailing" secondItem="kUZ-sc-mEf" secondAttribute="trailing" id="3BT-Qt-fMN"/>
+                            <constraint firstItem="bM3-eV-6i5" firstAttribute="top" secondItem="kUZ-sc-mEf" secondAttribute="bottom" constant="31" id="IEp-V7-NiC"/>
+                            <constraint firstItem="oKF-2b-CXx" firstAttribute="bottom" secondItem="7vk-Am-UVW" secondAttribute="bottom" constant="49" id="Uvc-7i-9qt"/>
+                            <constraint firstItem="EOI-F1-JwP" firstAttribute="top" secondItem="bM3-eV-6i5" secondAttribute="bottom" constant="41" id="Vzj-Xy-fXa"/>
+                            <constraint firstItem="oKF-2b-CXx" firstAttribute="trailing" secondItem="bM3-eV-6i5" secondAttribute="trailing" constant="50" id="Wo0-1l-0VO"/>
+                            <constraint firstItem="7vk-Am-UVW" firstAttribute="top" secondItem="EOI-F1-JwP" secondAttribute="bottom" constant="143" id="gds-YP-GFZ"/>
+                            <constraint firstItem="EOI-F1-JwP" firstAttribute="leading" secondItem="NdK-dy-Se2" secondAttribute="leadingMargin" id="hkz-jl-RD0"/>
+                            <constraint firstItem="7vk-Am-UVW" firstAttribute="trailing" secondItem="EOI-F1-JwP" secondAttribute="trailing" id="plm-wk-avR"/>
+                            <constraint firstItem="7vk-Am-UVW" firstAttribute="trailing" secondItem="NdK-dy-Se2" secondAttribute="trailingMargin" id="wOB-mP-nNX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UXR-7n-Ksj"/>
                     <connections>
@@ -438,7 +454,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VAT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABp-LL-QLt">
-                                <rect key="frame" x="192" y="707" width="31" height="21"/>
+                                <rect key="frame" x="192" y="668" width="31" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -465,12 +481,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JI-UX-Edb">
-                                <rect key="frame" x="146" y="758" width="122" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r6U-mf-d2l">
                                 <rect key="frame" x="20" y="175.5" width="374" height="110.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -533,6 +543,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JI-UX-Edb">
+                                <rect key="frame" x="146" y="707" width="122" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="confirmPlan:" destination="dD2-Vj-JOH" eventType="touchUpInside" id="EAf-QU-YwH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sgX-x3-vwb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -733,6 +752,7 @@
                 <tabBarController storyboardIdentifier="tabBarID" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Fzu-ma-XRZ" customClass="TabBarViewController" customModule="CoffeeSubscriptionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8AU-bf-011">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

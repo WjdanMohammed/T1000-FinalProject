@@ -13,8 +13,10 @@ class Plan {
     var selectedCafe = ""
     var planDuration = 5
     var startDate = Date()
-    var deliveryTime = ""
+    var deliveryTime = Date()
     var orderDetails = [MenuItem]()
+    
+    var userLocation : [String: Double] = ["lat": 1, "long": 1]
     
     var orderStatus = ""
     

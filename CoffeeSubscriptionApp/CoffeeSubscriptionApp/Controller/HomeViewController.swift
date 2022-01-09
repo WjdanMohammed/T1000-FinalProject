@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         
         let jsonData = NetworkManager.readLocalJSONFile(forName: "cafeNames")
         if let data = jsonData {
-            if let decodedData = NetworkManager.parseCafe(jsonData: data) {
+            if let decodedData = NetworkManager.parse(jsonData: data) {
                 for cafe in decodedData{
                     
                     cafes.append(cafe)
@@ -46,7 +46,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Plan.plan.selectedCafe = cafes[indexPath.row].cafeName ?? "cafe name not found"
+        Plan.plan.selectedCafe = cafes[indexPath.row].cafeId ?? "cafe not found"
         
         // pass selected cafe to menu vc
         self.performSegue(withIdentifier: K.navigateToMenu, sender: (Any).self)

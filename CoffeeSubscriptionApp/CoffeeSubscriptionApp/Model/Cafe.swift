@@ -11,5 +11,6 @@ import Foundation
 struct Cafe : Codable{
     
     var cafeName: String?
-    
+    var cafeId : String?
+    var menu : [MenuItem]?
 }

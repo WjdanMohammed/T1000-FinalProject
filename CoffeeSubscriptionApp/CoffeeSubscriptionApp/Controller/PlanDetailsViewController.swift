@@ -31,6 +31,14 @@ class PlanDetailsViewController: UIViewController {
         
     }
     
+    @IBAction func confirmPlan(_ sender: Any) {
+        
+        Plan.plan.orderStatus = "confirmed"
+        DatabaseManager.createPlan()
+        
+    }
+    
+    
     func setup(){
         
         //        for item in Plan.plan.orderDetails {
@@ -38,12 +46,13 @@ class PlanDetailsViewController: UIViewController {
         //        }
         //        orderDetails.text = Plan.plan.orderDetails[0].name
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
         
-        startingDate.text = dateFormatter.string(from: Plan.plan.startDate)
-        deliveryTime.text = Plan.plan.deliveryTime
+        startingDate.text = Formatter.format(date: Plan.plan.startDate)
+        
+        deliveryTime.text = Formatter.format(time: Plan.plan.deliveryTime)
+        
         subTotal.text = K.priceFormatter.string(from: NSNumber(value: calculatTotal() == 0.0 ? calculatTotal() : calculatTotal() - K.deliveryFee))
+        
         total.text =  K.priceFormatter.string(from: NSNumber(value: calculatTotal()))
         
         
@@ -64,7 +73,6 @@ class PlanDetailsViewController: UIViewController {
         }
 
         
-        // this will change if i let the user choose a deifferent order for each day 
         planTotal = singleOrderTotal * Float(Plan.plan.planDuration)
 
         if planTotal > 0 {

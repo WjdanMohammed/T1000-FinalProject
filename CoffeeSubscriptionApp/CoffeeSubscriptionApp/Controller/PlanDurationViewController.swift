@@ -83,18 +83,12 @@ class PlanDurationViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     @IBAction func continueToPlanDetailsButtonClicked(_ sender: Any) {
         
-        let dateFormatter = DateFormatter()
-        let timeFormatter = DateFormatter()
-        
-        dateFormatter.dateStyle = .medium
-        timeFormatter.timeStyle = .short
-        
-        print(dateFormatter.string(from: startingDate.date))
-        print(timeFormatter.string(from: deliveryTimePicker.date))
-        
         Plan.plan.startDate = startingDate.date
         
-        Plan.plan.deliveryTime = timeFormatter.string(from: deliveryTimePicker.date)
+        Plan.plan.deliveryTime = deliveryTimePicker.date
+        
+        Plan.plan.userLocation = ["lat": mkAnnotation.coordinate.latitude,
+                                  "long": mkAnnotation.coordinate.longitude]
         
         performSegue(withIdentifier: K.navigateToPlanDetails, sender: self)
         

@@ -26,13 +26,18 @@ class MenuViewController: UIViewController {
         menuCollectionView.dataSource = self
         menuCollectionView.allowsMultipleSelection = true
         
-        let jsonData = NetworkManager.readLocalJSONFile(forName: "menu1")
+        let jsonData = NetworkManager.readLocalJSONFile(forName: "cafeNames")
         if let data = jsonData {
-            if let decodedData = NetworkManager.parseMenu(jsonData: data) {
-                for item in decodedData{
-                    
-                    menuItems.append(item)
-                    
+            if let decodedData = NetworkManager.parse(jsonData: data) {
+                for cafe in decodedData{
+                    if cafe.cafeId == Plan.plan.selectedCafe{
+                        
+                        if let menu = cafe.menu{
+                            for item in menu{
+                                menuItems.append(item)
+                            }
+                        }
+                    }
                 }
             }
         }
