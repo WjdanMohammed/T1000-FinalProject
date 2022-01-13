@@ -9,9 +9,11 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    @IBOutlet weak var selectedDay: UISegmentedControl!
+//    @IBOutlet weak var selectedDay: UISegmentedControl!
+//
+//    @IBOutlet weak var category: UISegmentedControl!
     
-    @IBOutlet weak var category: UISegmentedControl!
+    @IBOutlet weak var cafeName: UILabel!
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
@@ -37,6 +39,8 @@ class MenuViewController: UIViewController {
                                 menuItems.append(item)
                             }
                         }
+                        
+                        cafeName.text = cafe.cafeName
                     }
                 }
             }
@@ -53,7 +57,7 @@ class MenuViewController: UIViewController {
    
 }
 
-extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         menuItems.count
@@ -65,7 +69,7 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.itemCellID, for: indexPath) as! MenuItemCell
         
         cell.itemName.text = menuItems[indexPath.row].name
-        cell.itemPrice.text = "\(menuItems[indexPath.row].price ?? 0.00) SAR"
+        cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: menuItems[indexPath.row].price ?? 0.00))
         
         return cell
     }
@@ -78,6 +82,10 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         cart.removeAll { $0.id == menuItems[indexPath.row].id }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: ( collectionView.frame.size.width - 20 ) / 2, height: ( collectionView.frame.size.height / 3 ) + 40)
     }
     
 }

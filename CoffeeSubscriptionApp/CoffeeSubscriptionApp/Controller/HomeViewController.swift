@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cafes.count
     }
@@ -52,4 +52,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.performSegue(withIdentifier: K.navigateToMenu, sender: (Any).self)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collectionView.frame.width , height: collectionView.frame.height/8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        20
+    }
 }

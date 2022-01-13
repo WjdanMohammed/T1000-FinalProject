@@ -20,6 +20,10 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameTextField.addPadding(.both(12))
+        emailTextField.addPadding(.both(12))
+        phoneNoTextField.addPadding(.both(12))
+        passwordTextField.addPadding(.both(12))
         
         
     }

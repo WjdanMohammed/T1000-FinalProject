@@ -16,6 +16,8 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        emailTextField.addPadding(.both(12))
+        passwordTextField.addPadding(.both(12))
         // Do any additional setup after loading the view.
     }
     

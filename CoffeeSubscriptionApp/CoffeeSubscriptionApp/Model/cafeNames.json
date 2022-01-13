@@ -58,24 +58,71 @@
                 "category":"coffee",
                 "coffeeCategory":"hot drinks",
                 "price": 35
+            },
+            {
+                "id":"ClodBrew",
+                "name":"Cold Brew",
+                "category":"coffee",
+                "coffeeCategory":"cold drinks",
+                "price": 18
+            },
+            {
+                "id":"CoveSignatureCoffee",
+                "name":"Cove Signature coffee",
+                "category":"coffee",
+                "coffeeCategory":"cold drinks",
+                "price": 20
+            },
+            {
+                "id":"brownies",
+                "name":"Brownies",
+                "category":"deserts",
+                "price": 18
             }
         ]
     },
     {
-        "cafeName":"Sky Roast",
-        "cafeId":"SkyRoast",
+        "cafeName":"Press Coffee",
+        "cafeId":"PressCoffee",
         "menu":[
             {
-                "id":"SkyLatte",
-                "name":"Sky Latte",
+                "id":"DripCoffee",
+                "name":"Drip Coffee",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 14
+            },
+            {
+                "id":"Latte",
+                "name":"Latte",
                 "category":"coffee",
                 "coffeeCategory":"hot drinks",
                 "price": 16
-            }
-            ,
+            },
             {
                 "id":"cappuccino",
                 "name":"Cappuccino",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 16
+            },
+            {
+                "id":"Macchiato",
+                "name":"Macchiato",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 18
+            },
+            {
+                "id":"Cortado",
+                "name":"Cortado",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 16
+            },
+            {
+                "id":"flatWhite",
+                "name":"Flat white",
                 "category":"coffee",
                 "coffeeCategory":"hot drinks",
                 "price": 16
@@ -101,6 +148,18 @@
                 "price": 18
             },
             {
+                "id":"Mocha",
+                "name":"Mocha",
+                "category":"hot drinks",
+                "price": 18
+            },
+            {
+                "id":"ChaiLatte",
+                "name":"Chai Latte",
+                "category":"hot drinks",
+                "price": 16
+            },
+            {
                 "id":"coffeeOfTheDay",
                 "name":"Coffee of the day",
                 "category":"coffee",
@@ -108,20 +167,19 @@
                 "price": 10
             },
             {
-                "id":"flatWhite",
-                "name":"Flat white",
-                "category":"coffee",
-                "coffeeCategory":"hot drinks",
-                "price": 16
-            },
-            {
                 "id":"gatheringCoffee",
                 "name":"Gathering coffee",
                 "category":"coffee",
                 "coffeeCategory":"hot drinks",
                 "price": 35
+            },
+            {
+                "id":"Bagel&Spread",
+                "name":"Bagel & Spread",
+                "category":"breakfast",
+                "price": 19
             }
         ]
     }
 ]
- 
+

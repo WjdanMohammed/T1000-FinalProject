@@ -14,6 +14,9 @@
 		AD0B5A272789CEA6002F0904 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A262789CEA6002F0904 /* TabBarViewController.swift */; };
 		AD0B5A292789EB83002F0904 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A282789EB83002F0904 /* LogInViewController.swift */; };
 		AD0B5A2B278A0E75002F0904 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0B5A2A278A0E75002F0904 /* StringExtention.swift */; };
+		AD2C1A27278C6B0600195B4C /* UITextFieldExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C1A26278C6B0600195B4C /* UITextFieldExtention.swift */; };
+		AD2C1A6B278DA5C200195B4C /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C1A6A278DA5C100195B4C /* UIViewExtention.swift */; };
+		AD2C1A6D278EE85300195B4C /* SFCompact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD2C1A6C278EE85200195B4C /* SFCompact.ttf */; };
 		AD769A13278AFFDB00E23ABD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD769A12278AFFDB00E23ABD /* Formatter.swift */; };
 		AD7930EB278218180029230A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EA278218180029230A /* AppDelegate.swift */; };
 		AD7930ED278218180029230A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7930EC278218180029230A /* SceneDelegate.swift */; };
@@ -67,6 +70,9 @@
 		AD0B5A262789CEA6002F0904 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		AD0B5A282789EB83002F0904 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = CoffeeSubscriptionApp/Controller/LogInViewController.swift; sourceTree = SOURCE_ROOT; };
 		AD0B5A2A278A0E75002F0904 /* StringExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
+		AD2C1A26278C6B0600195B4C /* UITextFieldExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtention.swift; sourceTree = "<group>"; };
+		AD2C1A6A278DA5C100195B4C /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
+		AD2C1A6C278EE85200195B4C /* SFCompact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFCompact.ttf; sourceTree = "<group>"; };
 		AD769A12278AFFDB00E23ABD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		AD7930E7278218180029230A /* CoffeeSubscriptionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeSubscriptionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7930EA278218180029230A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +131,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD2C1A25278C651B00195B4C /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				AD0B5A2A278A0E75002F0904 /* StringExtention.swift */,
+				AD2C1A26278C6B0600195B4C /* UITextFieldExtention.swift */,
+				AD2C1A6A278DA5C100195B4C /* UIViewExtention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		AD7930DE278218180029230A = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +197,8 @@
 		AD79311F27821B8A0029230A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD2C1A6C278EE85200195B4C /* SFCompact.ttf */,
+				AD2C1A25278C651B00195B4C /* Extentions */,
 				ADA5688627835BFC00DA4B7F /* cafeNames.json */,
 				ADA5689A2785D8F900DA4B7F /* menu1.json */,
 				ADA5688827835C2F00DA4B7F /* Cafe.swift */,
@@ -190,7 +208,6 @@
 				ADA5688C2784261400DA4B7F /* Constants.swift */,
 				ADA56898278592E100DA4B7F /* Plan.swift */,
 				ADFD0B542786FB48008E7126 /* PaymentService.swift */,
-				AD0B5A2A278A0E75002F0904 /* StringExtention.swift */,
 				AD769A12278AFFDB00E23ABD /* Formatter.swift */,
 			);
 			path = Model;
@@ -344,6 +361,7 @@
 			files = (
 				ADA5689B2785D8FA00DA4B7F /* menu1.json in Resources */,
 				AD7930F72782181A0029230A /* LaunchScreen.storyboard in Resources */,
+				AD2C1A6D278EE85300195B4C /* SFCompact.ttf in Resources */,
 				ADA5688727835BFD00DA4B7F /* cafeNames.json in Resources */,
 				AD7930F42782181A0029230A /* Assets.xcassets in Resources */,
 				AD7930F2278218180029230A /* Main.storyboard in Resources */,
@@ -380,12 +398,14 @@
 				AD0B5A212789A6E3002F0904 /* SignUpViewController.swift in Sources */,
 				ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */,
 				ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */,
+				AD2C1A27278C6B0600195B4C /* UITextFieldExtention.swift in Sources */,
 				AD0B5A292789EB83002F0904 /* LogInViewController.swift in Sources */,
 				AD0B5A252789BE54002F0904 /* DatabaseManager.swift in Sources */,
 				ADA568972784635600DA4B7F /* PlanDetailsViewController.swift in Sources */,
 				ADA5689F2785DC2800DA4B7F /* MenuItem.swift in Sources */,
 				AD0B5A1F27871975002F0904 /* SelectedItemCell.swift in Sources */,
 				ADA5688527832ECC00DA4B7F /* CafeCell.swift in Sources */,
+				AD2C1A6B278DA5C200195B4C /* UIViewExtention.swift in Sources */,
 				AD0B5A272789CEA6002F0904 /* TabBarViewController.swift in Sources */,
 				AD7930ED278218180029230A /* SceneDelegate.swift in Sources */,
 				AD769A13278AFFDB00E23ABD /* Formatter.swift in Sources */,

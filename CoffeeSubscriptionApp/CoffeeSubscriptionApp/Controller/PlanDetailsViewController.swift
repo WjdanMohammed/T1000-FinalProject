@@ -84,7 +84,7 @@ class PlanDetailsViewController: UIViewController {
     }
 }
 
-extension PlanDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension PlanDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         Plan.plan.orderDetails.count
     }
@@ -94,9 +94,13 @@ extension PlanDetailsViewController: UICollectionViewDelegate, UICollectionViewD
         
         cell.itemName.text = Plan.plan.orderDetails[indexPath.row].name
         if let price = Plan.plan.orderDetails[indexPath.row].price {
-            cell.itemPrice.text = String(price)
+            cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: price))
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collectionView.frame.width , height: 60)
     }
 }

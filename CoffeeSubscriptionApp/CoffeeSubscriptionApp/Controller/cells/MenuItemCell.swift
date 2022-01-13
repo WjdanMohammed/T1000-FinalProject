@@ -13,13 +13,17 @@ class MenuItemCell: UICollectionViewCell {
     
     @IBOutlet weak var itemPrice: UILabel!
     
+    @IBOutlet weak var selectedTag: UIImageView!
+    
     override var isSelected: Bool {
             didSet {
                 if self.isSelected {
                     backgroundColor = #colorLiteral(red: 0.8182985187, green: 0.9071113467, blue: 1, alpha: 1)
+                    selectedTag.isHidden = false
                 }
                 else {
                     backgroundColor = .white
+                    selectedTag.isHidden = true
                 }
             }
         }
