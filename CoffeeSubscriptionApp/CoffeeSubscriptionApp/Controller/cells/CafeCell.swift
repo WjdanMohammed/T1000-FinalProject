@@ -8,13 +8,12 @@
 import UIKit
 
 class CafeCell: UICollectionViewCell {
-        
     
     @IBOutlet weak var logo: UIImageView!
     
     @IBOutlet weak var name: UILabel!
     
-    override class func awakeFromNib() {
-    
+    override func awakeFromNib() {
+        dropShadow()
     }
 }

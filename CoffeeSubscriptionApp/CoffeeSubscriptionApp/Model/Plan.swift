@@ -14,7 +14,12 @@ class Plan {
     var planDuration = 5
     var startDate = Date()
     var deliveryTime = Date()
-    var orderDetails = [MenuItem]()
+
+    var orderDetails = ["1": [MenuItem](),
+                        "2": [MenuItem](),
+                        "3": [MenuItem](),
+                        "4": [MenuItem](),
+                        "5": [MenuItem]()]
     
     var userLocation : [String: Double] = ["lat": 1, "long": 1]
     

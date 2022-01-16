@@ -50,20 +50,31 @@ class DatabaseManager {
         }
     }
     
-    static func createPlan(){
+    static func createPlan() -> Bool {
         
         let db = Firestore.firestore()
         
-        var orderDetails = [Any]()
+        var status = true
         
-        for item in Plan.plan.orderDetails {
-            do {
-                let jsonData = try JSONEncoder().encode(item)
-                let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-                orderDetails.append(jsonObject)
-            }
-            catch {
-                // handle error
+        var orderDetails = ["1":[Any](),
+                            "2":[Any](),
+                            "3":[Any](),
+                            "4":[Any](),
+                            "5":[Any]()]
+
+        for day in Plan.plan.orderDetails {
+            
+            for item in day.value{
+                
+                do {
+                    let jsonData = try JSONEncoder().encode(item)
+                    let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                    orderDetails[day.key]?.append(jsonObject)
+                    
+                }
+                catch {
+                    // handle error
+                }
             }
         }
         
@@ -82,6 +93,7 @@ class DatabaseManager {
                 
             ]){ error in
                 if let error = error {
+                    status = false
                     print(error.localizedDescription)
                 }
             }
@@ -99,9 +111,11 @@ class DatabaseManager {
                     
                 ]) { error in
                     if let error = error {
+                        status = false
                         print(error.localizedDescription)
                     }
                 }
             }
+        return status
     }
 }

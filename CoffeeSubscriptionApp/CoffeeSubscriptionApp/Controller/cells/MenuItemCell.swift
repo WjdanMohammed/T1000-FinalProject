@@ -15,6 +15,8 @@ class MenuItemCell: UICollectionViewCell {
     
     @IBOutlet weak var selectedTag: UIImageView!
     
+//    @IBOutlet weak var contentView: UIView!
+    
     override var isSelected: Bool {
             didSet {
                 if self.isSelected {
@@ -28,7 +30,8 @@ class MenuItemCell: UICollectionViewCell {
             }
         }
     
-    override class func awakeFromNib() {
-    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        dropShadow()
     }
 }

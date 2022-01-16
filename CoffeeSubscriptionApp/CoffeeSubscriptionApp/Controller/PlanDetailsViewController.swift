@@ -9,7 +9,15 @@ import UIKit
 
 class PlanDetailsViewController: UIViewController {
     
-    @IBOutlet weak var orderDetailsCollectionView: UICollectionView!
+    @IBOutlet weak var firstDayCollectionView: UICollectionView!
+    
+    @IBOutlet weak var secondDayCollectionView: UICollectionView!
+    
+    @IBOutlet weak var thirdDayCollectionView: UICollectionView!
+    
+    @IBOutlet weak var fourthDayCollectionView: UICollectionView!
+    
+    @IBOutlet weak var fifthDayCollectionView: UICollectionView!
     
     @IBOutlet weak var startingDate: UILabel!
     
@@ -23,9 +31,6 @@ class PlanDetailsViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        orderDetailsCollectionView.delegate = self
-        orderDetailsCollectionView.dataSource = self
         
         setup()
         
@@ -41,11 +46,20 @@ class PlanDetailsViewController: UIViewController {
     
     func setup(){
         
-        //        for item in Plan.plan.orderDetails {
-        //            orderDetails.text = item.name
-        //        }
-        //        orderDetails.text = Plan.plan.orderDetails[0].name
+        firstDayCollectionView.delegate = self
+        firstDayCollectionView.dataSource = self
+
+        secondDayCollectionView.delegate = self
+        secondDayCollectionView.dataSource = self
         
+        thirdDayCollectionView.delegate = self
+        thirdDayCollectionView.dataSource = self
+        
+        fourthDayCollectionView.delegate = self
+        fourthDayCollectionView.dataSource = self
+        
+        fifthDayCollectionView.delegate = self
+        fifthDayCollectionView.dataSource = self
         
         startingDate.text = Formatter.format(date: Plan.plan.startDate)
         
@@ -55,28 +69,25 @@ class PlanDetailsViewController: UIViewController {
         
         total.text =  K.priceFormatter.string(from: NSNumber(value: calculatTotal()))
         
-        
     }
     
     func calculatTotal() -> Float {
         
-        var singleOrderTotal : Float = 0
-        var planTotal : Float = 0
+        var subtotal : Float = 0
         var total : Float = 0
         
         print(Plan.plan.orderDetails)
         
-        for item in Plan.plan.orderDetails {
-            if let price = item.price{
-                singleOrderTotal += price
+        for day in Plan.plan.orderDetails {
+            for item in day.value{
+                if let price = item.price{
+                    subtotal += price
+                }
             }
         }
 
-        
-        planTotal = singleOrderTotal * Float(Plan.plan.planDuration)
-
-        if planTotal > 0 {
-            total = ( planTotal * K.tax ) + K.deliveryFee
+        if subtotal > 0 {
+            total = ( subtotal * K.tax ) + K.deliveryFee
             return total
         }
         
@@ -86,18 +97,78 @@ class PlanDetailsViewController: UIViewController {
 
 extension PlanDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        Plan.plan.orderDetails.count
+        
+        if collectionView == firstDayCollectionView {
+            return Plan.plan.orderDetails["1"]?.count ?? 1
+        }
+        else if collectionView == secondDayCollectionView {
+            return Plan.plan.orderDetails["2"]?.count ?? 1
+        }
+        else if collectionView == thirdDayCollectionView {
+            return Plan.plan.orderDetails["3"]?.count ?? 1
+        }
+        else if collectionView == fourthDayCollectionView {
+            return Plan.plan.orderDetails["4"]?.count ?? 1
+        }
+        else {
+            return Plan.plan.orderDetails["5"]?.count ?? 1
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.selectedItemCell, for: indexPath) as! SelectedItemCell
         
-        cell.itemName.text = Plan.plan.orderDetails[indexPath.row].name
-        if let price = Plan.plan.orderDetails[indexPath.row].price {
-            cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: price))
+        if collectionView == firstDayCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.selectedItemCell, for: indexPath) as! SelectedItemCell
+            if let selectedItems = Plan.plan.orderDetails["1"] {
+                cell.itemName.text = selectedItems[indexPath.row].name
+                cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: selectedItems[indexPath.row].price ?? 0.00))
+            }
+            return cell
         }
         
-        return cell
+        else if collectionView == secondDayCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.selectedItemCell, for: indexPath) as! SelectedItemCell
+            if let selectedItems = Plan.plan.orderDetails["2"] {
+                cell.itemName.text = selectedItems[indexPath.row].name
+                cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: selectedItems[indexPath.row].price ?? 0.00))
+            }
+            return cell
+        }
+        
+        else if collectionView == thirdDayCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.selectedItemCell, for: indexPath) as! SelectedItemCell
+            if let selectedItems = Plan.plan.orderDetails["3"] {
+                cell.itemName.text = selectedItems[indexPath.row].name
+                cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: selectedItems[indexPath.row].price ?? 0.00))
+            }
+            return cell
+        }
+        
+        else if collectionView == fourthDayCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.selectedItemCell, for: indexPath) as! SelectedItemCell
+            if let selectedItems = Plan.plan.orderDetails["4"] {
+                cell.itemName.text = selectedItems[indexPath.row].name
+                cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: selectedItems[indexPath.row].price ?? 0.00))
+            }
+            return cell
+        }
+        
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.selectedItemCell, for: indexPath) as! SelectedItemCell
+            if let selectedItems = Plan.plan.orderDetails["5"] {
+                cell.itemName.text = selectedItems[indexPath.row].name
+                cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: selectedItems[indexPath.row].price ?? 0.00))
+            }
+            return cell
+        }
+        
+//        cell.itemName.text = Plan.plan.orderDetails[indexPath.row].name
+//        if let price = Plan.plan.orderDetails[indexPath.row].price {
+//            cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: price))
+//        }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
