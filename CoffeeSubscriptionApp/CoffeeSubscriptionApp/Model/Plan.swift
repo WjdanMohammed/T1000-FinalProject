@@ -23,7 +23,7 @@ class Plan {
     
     var userLocation : [String: Double] = ["lat": 1, "long": 1]
     
-    var orderStatus = ""
+    var isConfirmed = false
     
     static var plan = Plan()
     

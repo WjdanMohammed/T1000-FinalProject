@@ -35,13 +35,20 @@
 		ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688827835C2F00DA4B7F /* Cafe.swift */; };
 		ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688A278371CF00DA4B7F /* NetworkManager.swift */; };
 		ADA5688D2784261500DA4B7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5688C2784261400DA4B7F /* Constants.swift */; };
-		ADA5689127844E8500DA4B7F /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689027844E8500DA4B7F /* ItemDetailsViewController.swift */; };
 		ADA568932784502900DA4B7F /* PlanDurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA568922784502800DA4B7F /* PlanDurationViewController.swift */; };
 		ADA5689527845C6200DA4B7F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689427845C6200DA4B7F /* MenuItemCell.swift */; };
 		ADA568972784635600DA4B7F /* PlanDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA568962784635500DA4B7F /* PlanDetailsViewController.swift */; };
 		ADA56899278592E200DA4B7F /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA56898278592E100DA4B7F /* Plan.swift */; };
 		ADA5689B2785D8FA00DA4B7F /* menu1.json in Resources */ = {isa = PBXBuildFile; fileRef = ADA5689A2785D8F900DA4B7F /* menu1.json */; };
 		ADA5689F2785DC2800DA4B7F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689E2785DC2800DA4B7F /* MenuItem.swift */; };
+		ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */; };
+		ADE173FB2794846200F90A3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173FA2794846200F90A3B /* ProfileViewController.swift */; };
+		ADE173FE27949E3100F90A3B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ADE173FD27949E3100F90A3B /* Lottie */; };
+		ADE174022794A1DC00F90A3B /* failureAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE174012794A1DC00F90A3B /* failureAnimation.json */; };
+		ADE174042794A23B00F90A3B /* successAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE174032794A23B00F90A3B /* successAnimation.json */; };
+		ADE174062795DA5600F90A3B /* profile.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE174052795DA5500F90A3B /* profile.json */; };
+		ADE174082795FB1700F90A3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE174072795FB1600F90A3B /* User.swift */; };
+		ADE1740A279609C700F90A3B /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE17409279609C700F90A3B /* ProfileDetailsViewController.swift */; };
 		ADE6B9E82793056B00DDC251 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6B9E72793056B00DDC251 /* HBSegmentedControl.swift */; };
 		ADFD0B552786FB48008E7126 /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD0B542786FB48008E7126 /* PaymentService.swift */; };
 /* End PBXBuildFile section */
@@ -94,13 +101,19 @@
 		ADA5688827835C2F00DA4B7F /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		ADA5688A278371CF00DA4B7F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		ADA5688C2784261400DA4B7F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		ADA5689027844E8500DA4B7F /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		ADA568922784502800DA4B7F /* PlanDurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDurationViewController.swift; sourceTree = "<group>"; };
 		ADA5689427845C6200DA4B7F /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		ADA568962784635500DA4B7F /* PlanDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsViewController.swift; sourceTree = "<group>"; };
 		ADA56898278592E100DA4B7F /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		ADA5689A2785D8F900DA4B7F /* menu1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu1.json; sourceTree = "<group>"; };
 		ADA5689E2785DC2800DA4B7F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanCreationStatusViewController.swift; path = CoffeeSubscriptionApp/Controller/PlanCreationStatusViewController.swift; sourceTree = SOURCE_ROOT; };
+		ADE173FA2794846200F90A3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = CoffeeSubscriptionApp/Controller/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		ADE174012794A1DC00F90A3B /* failureAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failureAnimation.json; sourceTree = "<group>"; };
+		ADE174032794A23B00F90A3B /* successAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = successAnimation.json; path = ../../../../../Downloads/successAnimation.json; sourceTree = "<group>"; };
+		ADE174052795DA5500F90A3B /* profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profile.json; sourceTree = "<group>"; };
+		ADE174072795FB1600F90A3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ADE17409279609C700F90A3B /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileDetailsViewController.swift; path = CoffeeSubscriptionApp/Controller/ProfileDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE6B9E72793056B00DDC251 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
 		ADFD0B542786FB48008E7126 /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		ADFD0B562786FBF8008E7126 /* CoffeeSubscriptionApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeSubscriptionApp.entitlements; sourceTree = "<group>"; };
@@ -113,6 +126,7 @@
 			files = (
 				AD79311C27821B660029230A /* FirebaseAuth in Frameworks */,
 				AD79311E27821B660029230A /* FirebaseFirestore in Frameworks */,
+				ADE173FE27949E3100F90A3B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +217,9 @@
 				AD2C1A25278C651B00195B4C /* Extentions */,
 				ADA5688627835BFC00DA4B7F /* cafeNames.json */,
 				ADA5689A2785D8F900DA4B7F /* menu1.json */,
+				ADE174012794A1DC00F90A3B /* failureAnimation.json */,
+				ADE174032794A23B00F90A3B /* successAnimation.json */,
+				ADE174052795DA5500F90A3B /* profile.json */,
 				ADA5688827835C2F00DA4B7F /* Cafe.swift */,
 				ADA5689E2785DC2800DA4B7F /* MenuItem.swift */,
 				ADA5688A278371CF00DA4B7F /* NetworkManager.swift */,
@@ -211,6 +228,7 @@
 				ADA56898278592E100DA4B7F /* Plan.swift */,
 				ADFD0B542786FB48008E7126 /* PaymentService.swift */,
 				AD769A12278AFFDB00E23ABD /* Formatter.swift */,
+				ADE174072795FB1600F90A3B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,9 +251,11 @@
 				AD0B5A262789CEA6002F0904 /* TabBarViewController.swift */,
 				AD7930EE278218180029230A /* MenuViewController.swift */,
 				ADA5688227831C5100DA4B7F /* HomeViewController.swift */,
-				ADA5689027844E8500DA4B7F /* ItemDetailsViewController.swift */,
 				ADA568922784502800DA4B7F /* PlanDurationViewController.swift */,
 				ADA568962784635500DA4B7F /* PlanDetailsViewController.swift */,
+				ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */,
+				ADE173FA2794846200F90A3B /* ProfileViewController.swift */,
+				ADE17409279609C700F90A3B /* ProfileDetailsViewController.swift */,
 				ADE6B9E72793056B00DDC251 /* HBSegmentedControl.swift */,
 			);
 			path = Controller;
@@ -270,6 +290,7 @@
 			packageProductDependencies = (
 				AD79311B27821B660029230A /* FirebaseAuth */,
 				AD79311D27821B660029230A /* FirebaseFirestore */,
+				ADE173FD27949E3100F90A3B /* Lottie */,
 			);
 			productName = CoffeeSubscriptionApp;
 			productReference = AD7930E7278218180029230A /* CoffeeSubscriptionApp.app */;
@@ -345,6 +366,7 @@
 			mainGroup = AD7930DE278218180029230A;
 			packageReferences = (
 				AD79311A27821B660029230A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				ADE173FC27949E3000F90A3B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = AD7930E8278218180029230A /* Products */;
 			projectDirPath = "";
@@ -367,7 +389,10 @@
 				AD2C1A6D278EE85300195B4C /* SFCompact.ttf in Resources */,
 				ADA5688727835BFD00DA4B7F /* cafeNames.json in Resources */,
 				AD7930F42782181A0029230A /* Assets.xcassets in Resources */,
+				ADE174062795DA5600F90A3B /* profile.json in Resources */,
 				AD7930F2278218180029230A /* Main.storyboard in Resources */,
+				ADE174022794A1DC00F90A3B /* failureAnimation.json in Resources */,
+				ADE174042794A23B00F90A3B /* successAnimation.json in Resources */,
 				AD0B5A232789B788002F0904 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,11 +421,13 @@
 				AD7930EF278218180029230A /* MenuViewController.swift in Sources */,
 				AD7930EB278218180029230A /* AppDelegate.swift in Sources */,
 				ADA5689527845C6200DA4B7F /* MenuItemCell.swift in Sources */,
-				ADA5689127844E8500DA4B7F /* ItemDetailsViewController.swift in Sources */,
 				ADFD0B552786FB48008E7126 /* PaymentService.swift in Sources */,
 				AD0B5A212789A6E3002F0904 /* SignUpViewController.swift in Sources */,
+				ADE173FB2794846200F90A3B /* ProfileViewController.swift in Sources */,
+				ADE1740A279609C700F90A3B /* ProfileDetailsViewController.swift in Sources */,
 				ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */,
 				ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */,
+				ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */,
 				AD2C1A27278C6B0600195B4C /* UITextFieldExtention.swift in Sources */,
 				AD0B5A292789EB83002F0904 /* LogInViewController.swift in Sources */,
 				AD0B5A252789BE54002F0904 /* DatabaseManager.swift in Sources */,
@@ -411,6 +438,7 @@
 				ADA5688527832ECC00DA4B7F /* CafeCell.swift in Sources */,
 				AD2C1A6B278DA5C200195B4C /* UIViewExtention.swift in Sources */,
 				AD0B5A272789CEA6002F0904 /* TabBarViewController.swift in Sources */,
+				ADE174082795FB1700F90A3B /* User.swift in Sources */,
 				AD7930ED278218180029230A /* SceneDelegate.swift in Sources */,
 				AD769A13278AFFDB00E23ABD /* Formatter.swift in Sources */,
 				AD0B5A2B278A0E75002F0904 /* StringExtention.swift in Sources */,
@@ -773,6 +801,14 @@
 				kind = branch;
 			};
 		};
+		ADE173FC27949E3000F90A3B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -785,6 +821,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD79311A27821B660029230A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		ADE173FD27949E3100F90A3B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADE173FC27949E3000F90A3B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -52,7 +52,7 @@ class MenuViewController: UIViewController {
 //        UIColor(white: 1.0, alpha: 0.3)
         selectedDay.items = ["1st day", "2nd day", "3rd day", "4th day", "5th day"]
         selectedDay.font = UIFont(name: "Helvetica-bold", size: 12)
-        selectedDay.borderColor = UIColor(named: "gray")!
+        selectedDay.borderColor = UIColor(named: "Gray")!
         selectedDay.selectedIndex = 0
         selectedDay.padding = 4
         selectedDay.addTarget(self, action: #selector(selectedDayChanged(_:)), for: .valueChanged)

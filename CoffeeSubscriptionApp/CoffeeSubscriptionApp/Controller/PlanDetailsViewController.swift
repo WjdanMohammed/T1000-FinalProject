@@ -38,8 +38,8 @@ class PlanDetailsViewController: UIViewController {
     
     @IBAction func confirmPlan(_ sender: Any) {
         
-        Plan.plan.orderStatus = "confirmed"
         DatabaseManager.createPlan()
+        performSegue(withIdentifier: K.navigateToPlanStatus, sender: self)
         
     }
     
