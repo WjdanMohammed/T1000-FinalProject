@@ -15,6 +15,10 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
+    @IBOutlet weak var repeatOrderOption: UIButton!
+    
+    @IBOutlet weak var continueButton: UIButton!
+    
     var menuItems = [MenuItem]()
     
     var firstDayCart = [MenuItem]()
@@ -22,7 +26,7 @@ class MenuViewController: UIViewController {
     var thirdDayCart = [MenuItem]()
     var fourthDayCart = [MenuItem]()
     var fifthDayCart = [MenuItem]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +35,7 @@ class MenuViewController: UIViewController {
     }
     
     func setupViews(){
-
+        
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         menuCollectionView.allowsMultipleSelection = true
@@ -59,30 +63,115 @@ class MenuViewController: UIViewController {
         selectedDay.borderColor = UIColor(named: "Gray")!
         selectedDay.selectedIndex = 0
         selectedDay.padding = 4
+        selectedDay.isEnabled = false
         selectedDay.addTarget(self, action: #selector(selectedDayChanged(_:)), for: .valueChanged)
     }
     
     @objc func selectedDayChanged(_ sender: Any) {
         
+        // get selected items
         menuCollectionView.reloadData()
         
     }
+    
+    @IBAction func repeatOrderForPlanChecked(_ sender: Any) {
+        if Plan.plan.sameOrderForPlan == false {
+            Plan.plan.sameOrderForPlan = true
+            //MARK: fix image
+            repeatOrderOption.setImage(UIImage(named: "checkmark.circle.fill"), for: .normal)
+            continueButton.setTitle("Continue", for: .normal)
+            
+            if selectedDay.selectedIndex != 0 {
+                selectedDay.selectedIndex = 0
+                firstDayCart.removeAll()
+            }
+            selectedDay.isEnabled = false
+        }
+        
+        else {
+            Plan.plan.sameOrderForPlan = false
+            repeatOrderOption.setImage(UIImage(named: "circle"), for: .normal)
 
+            continueButton.setTitle("next", for: .normal)
+            selectedDay.isEnabled = true
+        }
+    }
     
     
     @IBAction func confirmSelectionButtonClicked(_ sender: Any) {
-
-
-        Plan.plan.orderDetails["1"]?.append(contentsOf: self.firstDayCart)
-        Plan.plan.orderDetails["2"]?.append(contentsOf: self.secondDayCart)
-        Plan.plan.orderDetails["3"]?.append(contentsOf: self.thirdDayCart)
-        Plan.plan.orderDetails["4"]?.append(contentsOf: self.fourthDayCart)
-        Plan.plan.orderDetails["5"]?.append(contentsOf: self.fifthDayCart)
         
-        performSegue(withIdentifier: K.navigateToPlanSetup, sender: self)
+        if Plan.plan.sameOrderForPlan {
+            
+            if !firstDayCart.isEmpty {
+                Plan.plan.orderDetails["1"]?.append(contentsOf: self.firstDayCart)
+                Plan.plan.orderDetails["2"]?.append(contentsOf: self.firstDayCart)
+                Plan.plan.orderDetails["3"]?.append(contentsOf: self.firstDayCart)
+                Plan.plan.orderDetails["4"]?.append(contentsOf: self.firstDayCart)
+                Plan.plan.orderDetails["5"]?.append(contentsOf: self.firstDayCart)
+                
+                performSegue(withIdentifier: K.navigateToPlanSetup, sender: self)
+            }
+            else{
+                // handle error
+            }
+        }
         
+        else {
+            
+            switch selectedDay.selectedIndex {
+                
+            case 0 :
+                if !firstDayCart.isEmpty {
+                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                    menuCollectionView.reloadData()
+                    selectedDay.isEnabled = true
+                }
+                else {}
+                
+            case 1 :
+                if !secondDayCart.isEmpty {
+                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                    menuCollectionView.reloadData()
+                }
+                else {}
+                
+            case 2 :
+                if !thirdDayCart.isEmpty {
+                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                    menuCollectionView.reloadData()
+                }
+                else {}
+                
+            case 3 :
+                if !fourthDayCart.isEmpty {
+                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                    menuCollectionView.reloadData()
+                    continueButton.setTitle("Continue", for: .normal)
+                    continueButton.backgroundColor = #colorLiteral(red: 0.1256147027, green: 0.1457214653, blue: 0.1624999642, alpha: 1)
+                }
+                else {}
+                
+            case 4 :
+                if !fifthDayCart.isEmpty {
+                    
+                    Plan.plan.orderDetails["1"]?.append(contentsOf: self.firstDayCart)
+                    Plan.plan.orderDetails["2"]?.append(contentsOf: self.secondDayCart)
+                    Plan.plan.orderDetails["3"]?.append(contentsOf: self.thirdDayCart)
+                    Plan.plan.orderDetails["4"]?.append(contentsOf: self.fourthDayCart)
+                    Plan.plan.orderDetails["5"]?.append(contentsOf: self.fifthDayCart)
+                    
+                    performSegue(withIdentifier: K.navigateToPlanSetup, sender: self)
+                    
+                }
+                else {
+                    // select chef's rec from menu
+                }
+            default :
+                print("errorrrr")
+            }
+        }
     }
-   
+    
 }
 
 extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -115,8 +204,8 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-
+        
+        
         if selectedDay.selectedIndex == 0 {
             firstDayCart.append(menuItems[indexPath.row])
         }
@@ -132,8 +221,8 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
         else if selectedDay.selectedIndex == 4 {
             fifthDayCart.append(menuItems[indexPath.row])
         }
-
-
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

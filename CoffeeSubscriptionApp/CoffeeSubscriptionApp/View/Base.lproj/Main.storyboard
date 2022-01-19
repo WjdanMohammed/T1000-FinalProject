@@ -592,18 +592,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taE-ea-v8V">
                                 <rect key="frame" x="20" y="774" width="374" height="40"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Usg-Cu-qzO">
-                                        <rect key="frame" x="10" y="5" width="354" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Usg-Cu-qzO">
+                                        <rect key="frame" x="10" y="4.5" width="354" height="31"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qz3-6q-RNs">
-                                                <rect key="frame" x="0.0" y="1" width="18.5" height="27.5"/>
-                                                <color key="tintColor" name="Color-2"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GP-hB-YYt">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="31"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="CME-GI-Ma5"/>
+                                                    <constraint firstAttribute="width" constant="30" id="EPS-6C-9YI"/>
+                                                    <constraint firstAttribute="height" constant="31" id="Jak-T0-CjW"/>
                                                 </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to recieve the same order for the whole plan? Press and hold Continue button " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEF-Oy-qAP">
-                                                <rect key="frame" x="20.5" y="0.0" width="333.5" height="30"/>
+                                                <color key="tintColor" name="main dark"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="repeatOrderForPlanChecked:" destination="ZEc-Id-ZuO" eventType="touchUpInside" id="Q8e-UH-iQE"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recieve the same items for the whole plan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEF-Oy-qAP">
+                                                <rect key="frame" x="38" y="0.0" width="316" height="31"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="11"/>
                                                 <color key="textColor" red="0.1294117719" green="0.14509806040000001" blue="0.1607843041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -640,7 +646,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yf-Ba-NNs">
                                 <rect key="frame" x="20" y="822" width="374" height="40"/>
-                                <color key="backgroundColor" name="main dark"/>
+                                <color key="backgroundColor" red="0.21176470588235294" green="0.23921568627450979" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hRp-5b-g2m"/>
                                 </constraints>
@@ -684,9 +690,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cafeName" destination="C20-sd-RcW" id="lRa-iA-KrO"/>
-                        <outlet property="continueButton" destination="4yf-Ba-NNs" id="6yU-06-kes"/>
+                        <outlet property="continueButton" destination="4yf-Ba-NNs" id="537-ea-lQ6"/>
                         <outlet property="menuCollectionView" destination="PI9-EW-CIk" id="ui8-BF-c5k"/>
-                        <outlet property="sameOrderForPlan" destination="Qz3-6q-RNs" id="wrg-IJ-soe"/>
+                        <outlet property="repeatOrderOption" destination="0GP-hB-YYt" id="rEE-KE-TuT"/>
                         <outlet property="selectedDay" destination="v3M-fc-Zgr" id="aba-V8-U3t"/>
                         <segue destination="veA-uj-Noc" kind="show" identifier="planSetup1" id="NXx-aT-Wdi"/>
                     </connections>
@@ -1859,7 +1865,6 @@
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
-        <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="Color-2">
             <color red="0.25099998712539673" green="0.24699999392032623" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -1867,13 +1872,13 @@
             <color red="0.57999998331069946" green="0.57999998331069946" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="background">
-            <color red="0.96078431610000004" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96100002527236938" green="0.9649999737739563" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lightGray">
             <color red="0.86699998378753662" green="0.86699998378753662" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="main dark">
-            <color red="0.1289999932050705" green="0.14499999582767487" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.1294117719" green="0.14509806040000001" blue="0.1607843041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primary color">
             <color red="0.88200002908706665" green="0.89399999380111694" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
