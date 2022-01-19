@@ -18,7 +18,8 @@ class LogInViewController: UIViewController {
 
         emailTextField.addPadding(.both(12))
         passwordTextField.addPadding(.both(12))
-        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
+
     }
     
     @IBAction func logIn(_ sender: Any) {

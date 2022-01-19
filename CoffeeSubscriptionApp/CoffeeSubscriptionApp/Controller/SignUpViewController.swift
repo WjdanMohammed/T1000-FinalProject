@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController {
         emailTextField.addPadding(.both(12))
         phoneNoTextField.addPadding(.both(12))
         passwordTextField.addPadding(.both(12))
+        self.hideKeyboardWhenTappedAround()
         
         
     }

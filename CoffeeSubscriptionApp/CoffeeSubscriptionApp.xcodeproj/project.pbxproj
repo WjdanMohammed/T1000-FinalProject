@@ -41,6 +41,8 @@
 		ADA56899278592E200DA4B7F /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA56898278592E100DA4B7F /* Plan.swift */; };
 		ADA5689B2785D8FA00DA4B7F /* menu1.json in Resources */ = {isa = PBXBuildFile; fileRef = ADA5689A2785D8F900DA4B7F /* menu1.json */; };
 		ADA5689F2785DC2800DA4B7F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689E2785DC2800DA4B7F /* MenuItem.swift */; };
+		ADC3D9E72797F0230096F826 /* MenuImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC3D9E62797F0230096F826 /* MenuImagesModel.swift */; };
+		ADC3D9E9279895F90096F826 /* UIViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */; };
 		ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */; };
 		ADE173FB2794846200F90A3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173FA2794846200F90A3B /* ProfileViewController.swift */; };
 		ADE173FE27949E3100F90A3B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ADE173FD27949E3100F90A3B /* Lottie */; };
@@ -107,6 +109,8 @@
 		ADA56898278592E100DA4B7F /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		ADA5689A2785D8F900DA4B7F /* menu1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu1.json; sourceTree = "<group>"; };
 		ADA5689E2785DC2800DA4B7F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		ADC3D9E62797F0230096F826 /* MenuImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImagesModel.swift; sourceTree = "<group>"; };
+		ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtention.swift; sourceTree = "<group>"; };
 		ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanCreationStatusViewController.swift; path = CoffeeSubscriptionApp/Controller/PlanCreationStatusViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE173FA2794846200F90A3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = CoffeeSubscriptionApp/Controller/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE174012794A1DC00F90A3B /* failureAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failureAnimation.json; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				AD0B5A2A278A0E75002F0904 /* StringExtention.swift */,
 				AD2C1A26278C6B0600195B4C /* UITextFieldExtention.swift */,
 				AD2C1A6A278DA5C100195B4C /* UIViewExtention.swift */,
+				ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				ADFD0B542786FB48008E7126 /* PaymentService.swift */,
 				AD769A12278AFFDB00E23ABD /* Formatter.swift */,
 				ADE174072795FB1600F90A3B /* User.swift */,
+				ADC3D9E62797F0230096F826 /* MenuImagesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC3D9E72797F0230096F826 /* MenuImagesModel.swift in Sources */,
 				AD7930EF278218180029230A /* MenuViewController.swift in Sources */,
 				AD7930EB278218180029230A /* AppDelegate.swift in Sources */,
 				ADA5689527845C6200DA4B7F /* MenuItemCell.swift in Sources */,
@@ -428,6 +435,7 @@
 				ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */,
 				ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */,
 				ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */,
+				ADC3D9E9279895F90096F826 /* UIViewControllerExtention.swift in Sources */,
 				AD2C1A27278C6B0600195B4C /* UITextFieldExtention.swift in Sources */,
 				AD0B5A292789EB83002F0904 /* LogInViewController.swift in Sources */,
 				AD0B5A252789BE54002F0904 /* DatabaseManager.swift in Sources */,

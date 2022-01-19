@@ -26,6 +26,8 @@ class ProfileDetailsViewController: UIViewController {
         emailTextField.text = User.user.email
         phoneNoTextField.text = User.user.phoneNo
         
+        self.hideKeyboardWhenTappedAround()
+
     }
     
     @IBAction func saveChangesButtonClicked(_ sender: Any) {

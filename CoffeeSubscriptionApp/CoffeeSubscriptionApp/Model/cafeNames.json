@@ -1,5 +1,130 @@
 [
     {
+        "cafeName":"Dunkin Donuts",
+        "cafeId":"DD",
+        "menu":[
+            {
+                "id":"dunkinOriginalCoffee",
+                "name":"Dunkin' Original Coffee",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 11
+            }
+            ,
+            {
+                "id":"americano",
+                "name":"Americano",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 11
+            },
+            {
+                "id":"latte",
+                "name":"Latte",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 12
+            },
+            {
+                "id":"cappuccino",
+                "name":"Cappuccino",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 12
+            },
+            {
+                "id":"macchiato",
+                "name":"Macchiato",
+                "category":"hot drinks",
+                "price": 12
+            },
+            {
+                "id":"espresso",
+                "name":"Espresso",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 10
+            },
+            {
+                "id":"icedCoffee",
+                "name":"Iced Coffee",
+                "category":"coffee",
+                "coffeeCategory":"cold drinks",
+                "price": 12
+            },
+            {
+                "id":"coldBrew",
+                "name":"Cold Brew",
+                "category":"coffee",
+                "coffeeCategory":"hot drinks",
+                "price": 12
+            },
+            {
+                "id":"icedAmericano",
+                "name":"Iced Americano",
+                "category":"coffee",
+                "coffeeCategory":"cold drinks",
+                "price": 12
+            },
+            {
+                "id":"IcedLatte",
+                "name":"Iced Latte",
+                "category":"coffee",
+                "coffeeCategory":"cold drinks",
+                "price": 12
+            },
+            {
+                "id":"icedMacchiato",
+                "name":"Iced Macchiato",
+                "category":"coffee",
+                "coffeeCategory":"cold drinks",
+                "price": 13
+            },
+            {
+                "id":"icedTea",
+                "name":"Iced Tea",
+                "category":"tea",
+                "price": 10
+            },
+            {
+                "id":"bagelWithcheeseCreamSpread",
+                "name":"Bagel With Cheese Cream Spread",
+                "category":"bagel and muffins",
+                "price": 14
+            },
+            {
+                "id":"muffins",
+                "name":"Muffins",
+                "category":"bagel and muffins",
+                "price": 12
+            },
+            {
+                "id":"croissant",
+                "name":"Croissant",
+                "category":"bagel and muffins",
+                "price": 11
+            },
+            {
+                "id":"englishMuffin",
+                "name":"English Muffin",
+                "category":"bagel and muffins",
+                "price": 11
+            },
+            {
+                "id":"birthdayDonut",
+                "name":"Birthday Donut",
+                "category":"donuts",
+                "price": 12
+            },
+            {
+                "id":"munchkinsDonut",
+                "name":"Munchkins",
+                "category":"donuts",
+                "price": 12
+            }
+        ]
+    },
+    {
         "cafeName":"Cove Coffee & Roastery",
         "cafeId":"CoveCoffee&Roastery",
         "menu":[
@@ -107,20 +232,6 @@
                 "price": 16
             },
             {
-                "id":"Macchiato",
-                "name":"Macchiato",
-                "category":"coffee",
-                "coffeeCategory":"hot drinks",
-                "price": 18
-            },
-            {
-                "id":"Cortado",
-                "name":"Cortado",
-                "category":"coffee",
-                "coffeeCategory":"hot drinks",
-                "price": 16
-            },
-            {
                 "id":"flatWhite",
                 "name":"Flat white",
                 "category":"coffee",
@@ -148,36 +259,29 @@
                 "price": 18
             },
             {
-                "id":"Mocha",
-                "name":"Mocha",
+                "id":"matchaLatte",
+                "name":"Matcha Latte",
+                "category":"hot drinks",
+                "price": 12
+            },
+            {
+                "id":"icedLatte",
+                "name":"Iced Latte",
+                "category":"coffee",
+                "coffeeCategory":"cold drinks",
+                "price": 12
+            },
+            {
+                "id":"icedCaramelMacchiato",
+                "name":"Iced Caramel Macchiato",
                 "category":"hot drinks",
                 "price": 18
             },
             {
-                "id":"ChaiLatte",
-                "name":"Chai Latte",
-                "category":"hot drinks",
-                "price": 16
-            },
-            {
-                "id":"coffeeOfTheDay",
-                "name":"Coffee of the day",
-                "category":"coffee",
-                "coffeeCategory":"hot drinks",
+                "id":"croissant",
+                "name":"Croissant",
+                "category":"other",
                 "price": 10
-            },
-            {
-                "id":"gatheringCoffee",
-                "name":"Gathering coffee",
-                "category":"coffee",
-                "coffeeCategory":"hot drinks",
-                "price": 35
-            },
-            {
-                "id":"Bagel&Spread",
-                "name":"Bagel & Spread",
-                "category":"breakfast",
-                "price": 19
             }
         ]
     }

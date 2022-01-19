@@ -41,6 +41,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.cafeCellID, for: indexPath) as! CafeCell
+        cell.logo.image = Images.logos[indexPath.row]
         cell.name.text = cafes[indexPath.row].cafeName
         return cell
     }

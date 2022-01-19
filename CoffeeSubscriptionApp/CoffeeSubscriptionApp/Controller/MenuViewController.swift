@@ -8,8 +8,6 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
-//    @IBOutlet weak var category: UISegmentedControl!
     
     @IBOutlet weak var selectedDay: HBSegmentedControl!
     
@@ -28,6 +26,12 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        
+    }
+    
+    func setupViews(){
+
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         menuCollectionView.allowsMultipleSelection = true
@@ -49,7 +53,7 @@ class MenuViewController: UIViewController {
                 }
             }
         }
-//        UIColor(white: 1.0, alpha: 0.3)
+        
         selectedDay.items = ["1st day", "2nd day", "3rd day", "4th day", "5th day"]
         selectedDay.font = UIFont(name: "Helvetica-bold", size: 12)
         selectedDay.borderColor = UIColor(named: "Gray")!
@@ -68,7 +72,6 @@ class MenuViewController: UIViewController {
     
     @IBAction func confirmSelectionButtonClicked(_ sender: Any) {
 
-//        Plan.plan.orderDetails.removeAll()
 
         Plan.plan.orderDetails["1"]?.append(contentsOf: self.firstDayCart)
         Plan.plan.orderDetails["2"]?.append(contentsOf: self.secondDayCart)
@@ -92,6 +95,18 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.itemCellID, for: indexPath) as! MenuItemCell
+        
+        switch Plan.plan.selectedCafe {
+            
+        case "DD" :
+            cell.itemImage.image = Images.dunkinDonutsMenuImages[indexPath.row]
+        case "CoveCoffee&Roastery" :
+            cell.itemImage.image = Images.coveMenuImages[indexPath.row]
+        case "PressCoffee" :
+            cell.itemImage.image = Images.pressMenuImages[indexPath.row]
+        default:
+            cell.itemImage.image = Images.coveMenuImages[indexPath.row]
+        }
         
         cell.itemName.text = menuItems[indexPath.row].name
         cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: menuItems[indexPath.row].price ?? 0.00))
