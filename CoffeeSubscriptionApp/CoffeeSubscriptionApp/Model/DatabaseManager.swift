@@ -152,9 +152,7 @@ class DatabaseManager {
                 if let error = error {
                     print(error.localizedDescription)
                 }
-//                else{
-//                    Plan.plan.isConfirmed = true
-//                }
+
             }
             
             db.collection("Plans").addDocument(data: [
@@ -174,9 +172,7 @@ class DatabaseManager {
                 if let error = error {
                     print(error.localizedDescription)
                 }
-//                else{
-//                    Plan.plan.isConfirmed = true
-//                }
+
             }
         }
         Plan.plan.isConfirmed = true

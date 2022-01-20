@@ -9,6 +9,7 @@ import Foundation
 
 class K {
     
+    static let getStarted = "getStarted"
     static let cafeCellID = "cafeCellID"
     static let itemCellID = "itemCellID"
     static let navigateToSignUp = "signUp"

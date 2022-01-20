@@ -21,9 +21,16 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileView: UIStackView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupViews()
+        
+    }
+    
+    func setupViews(){
+        
         DatabaseManager.checkAuthentication(completion: { authenticated in
             if authenticated {
                 self.authenticationView.isHidden = true
@@ -36,15 +43,7 @@ class ProfileViewController: UIViewController {
                 self.username.text = "hi there! "
             }
         })
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         
-        setupViews()
-        
-    }
-    
-    func setupViews(){
         profileAnimationView?.loopMode = .playOnce
         profileAnimationView?.animationSpeed = 0.8
         profileAnimationView?.play()

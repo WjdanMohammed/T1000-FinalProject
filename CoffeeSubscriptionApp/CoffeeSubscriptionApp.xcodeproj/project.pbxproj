@@ -44,6 +44,7 @@
 		ADC3D9E72797F0230096F826 /* MenuImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC3D9E62797F0230096F826 /* MenuImagesModel.swift */; };
 		ADC3D9E9279895F90096F826 /* UIViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */; };
 		ADDD744F2799D6E400470004 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD744E2799D6E400470004 /* PlanViewController.swift */; };
+		ADDD74512799EB3100470004 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD74502799EB3000470004 /* LaunchScreenViewController.swift */; };
 		ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */; };
 		ADE173FB2794846200F90A3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173FA2794846200F90A3B /* ProfileViewController.swift */; };
 		ADE173FE27949E3100F90A3B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ADE173FD27949E3100F90A3B /* Lottie */; };
@@ -113,6 +114,7 @@
 		ADC3D9E62797F0230096F826 /* MenuImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImagesModel.swift; sourceTree = "<group>"; };
 		ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtention.swift; sourceTree = "<group>"; };
 		ADDD744E2799D6E400470004 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		ADDD74502799EB3000470004 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanCreationStatusViewController.swift; path = CoffeeSubscriptionApp/Controller/PlanCreationStatusViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE173FA2794846200F90A3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = CoffeeSubscriptionApp/Controller/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE174012794A1DC00F90A3B /* failureAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failureAnimation.json; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				ADE173FA2794846200F90A3B /* ProfileViewController.swift */,
 				ADE17409279609C700F90A3B /* ProfileDetailsViewController.swift */,
 				ADE6B9E72793056B00DDC251 /* HBSegmentedControl.swift */,
+				ADDD74502799EB3000470004 /* LaunchScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				ADE1740A279609C700F90A3B /* ProfileDetailsViewController.swift in Sources */,
 				ADA5688927835C2F00DA4B7F /* Cafe.swift in Sources */,
 				ADA5688B278371CF00DA4B7F /* NetworkManager.swift in Sources */,
+				ADDD74512799EB3100470004 /* LaunchScreenViewController.swift in Sources */,
 				ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */,
 				ADC3D9E9279895F90096F826 /* UIViewControllerExtention.swift in Sources */,
 				AD2C1A27278C6B0600195B4C /* UITextFieldExtention.swift in Sources */,

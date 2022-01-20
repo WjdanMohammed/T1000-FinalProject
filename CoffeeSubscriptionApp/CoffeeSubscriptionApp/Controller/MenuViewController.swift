@@ -19,6 +19,8 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var continueButton: UIButton!
     
+    @IBOutlet weak var repeatOrderView: UIView!
+    
     var menuItems = [MenuItem]()
     
     var firstDayCart = [MenuItem]()
@@ -77,8 +79,8 @@ class MenuViewController: UIViewController {
     @IBAction func repeatOrderForPlanChecked(_ sender: Any) {
         if Plan.plan.sameOrderForPlan == false {
             Plan.plan.sameOrderForPlan = true
-            //MARK: fix image
-            repeatOrderOption.setImage(UIImage(named: "checkmark.circle.fill"), for: .normal)
+            
+            repeatOrderView.backgroundColor = #colorLiteral(red: 0.185415864, green: 0.3513295054, blue: 0.7834054828, alpha: 0.336817053)
             continueButton.setTitle("Continue", for: .normal)
             
             if selectedDay.selectedIndex != 0 {
@@ -90,7 +92,8 @@ class MenuViewController: UIViewController {
         
         else {
             Plan.plan.sameOrderForPlan = false
-            repeatOrderOption.setImage(UIImage(named: "circle"), for: .normal)
+            
+            repeatOrderView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.4652835265)
 
             continueButton.setTitle("next", for: .normal)
             selectedDay.isEnabled = true

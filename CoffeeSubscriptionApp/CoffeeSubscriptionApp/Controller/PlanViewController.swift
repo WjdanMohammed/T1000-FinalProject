@@ -8,17 +8,7 @@
 import UIKit
 
 class PlanViewController: UIViewController{
-    
-//    @IBOutlet weak var cafeName: UILabel!
-//
-//    @IBOutlet weak var startingDate: UILabel!
-//
-//    @IBOutlet weak var deliveryTime: UILabel!
-//
-//    @IBOutlet weak var planState: UILabel!
-//
-//    @IBOutlet weak var currentPlanView: UIView!
-    
+
     @IBOutlet weak var cafeName: UILabel!
     
     @IBOutlet weak var startingDate: UILabel!
@@ -28,6 +18,8 @@ class PlanViewController: UIViewController{
     @IBOutlet weak var planState: UILabel!
     
     @IBOutlet weak var currentPlanView: UIView!
+    
+    @IBOutlet weak var emptyStateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +32,9 @@ class PlanViewController: UIViewController{
 
         DatabaseManager.getPlanInfo { infoAvailable in
             if infoAvailable{
+                
+                self.emptyStateLabel.isHidden = true
+                self.currentPlanView.isHidden = false
                 
                 self.cafeName.text = Plan.plan.selectedCafe
                 self.startingDate.text = Plan.plan.startDate

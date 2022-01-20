@@ -41,22 +41,8 @@ class PlanDetailsViewController: UIViewController {
             
             if authenticated {
 
-                DatabaseManager.checkEligibilityToCreateAPlan(completion: { eligiable in
-                    if eligiable{
                         DatabaseManager.createPlan()
-
                         self.performSegue(withIdentifier: K.navigateToPlanStatus, sender: self)
-                    }
-                    else {
-
-                        let alert = UIAlertController(title: "You already have an active plan", message: "Do you want to view your plan?", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: nil))
-                        alert.addAction(UIAlertAction(title: "dismiss", style: UIAlertAction.Style.cancel, handler: nil))
-
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                    
-                })
                 
             }
             else {
