@@ -100,78 +100,78 @@ class MenuViewController: UIViewController {
     
     @IBAction func confirmSelectionButtonClicked(_ sender: Any) {
         
-        if Plan.plan.sameOrderForPlan {
             
-            if !firstDayCart.isEmpty {
-                Plan.plan.orderDetails["1"]?.append(contentsOf: self.firstDayCart)
-                Plan.plan.orderDetails["2"]?.append(contentsOf: self.firstDayCart)
-                Plan.plan.orderDetails["3"]?.append(contentsOf: self.firstDayCart)
-                Plan.plan.orderDetails["4"]?.append(contentsOf: self.firstDayCart)
-                Plan.plan.orderDetails["5"]?.append(contentsOf: self.firstDayCart)
+            if Plan.plan.sameOrderForPlan {
                 
-                performSegue(withIdentifier: K.navigateToPlanSetup, sender: self)
-            }
-            else{
-                // handle error
-            }
-        }
-        
-        else {
-            
-            switch selectedDay.selectedIndex {
-                
-            case 0 :
                 if !firstDayCart.isEmpty {
-                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
-                    menuCollectionView.reloadData()
-                    selectedDay.isEnabled = true
-                }
-                else {}
-                
-            case 1 :
-                if !secondDayCart.isEmpty {
-                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
-                    menuCollectionView.reloadData()
-                }
-                else {}
-                
-            case 2 :
-                if !thirdDayCart.isEmpty {
-                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
-                    menuCollectionView.reloadData()
-                }
-                else {}
-                
-            case 3 :
-                if !fourthDayCart.isEmpty {
-                    selectedDay.selectedIndex = selectedDay.selectedIndex + 1
-                    menuCollectionView.reloadData()
-                    continueButton.setTitle("Continue", for: .normal)
-                    continueButton.backgroundColor = #colorLiteral(red: 0.1256147027, green: 0.1457214653, blue: 0.1624999642, alpha: 1)
-                }
-                else {}
-                
-            case 4 :
-                if !fifthDayCart.isEmpty {
-                    
                     Plan.plan.orderDetails["1"]?.append(contentsOf: self.firstDayCart)
-                    Plan.plan.orderDetails["2"]?.append(contentsOf: self.secondDayCart)
-                    Plan.plan.orderDetails["3"]?.append(contentsOf: self.thirdDayCart)
-                    Plan.plan.orderDetails["4"]?.append(contentsOf: self.fourthDayCart)
-                    Plan.plan.orderDetails["5"]?.append(contentsOf: self.fifthDayCart)
+                    Plan.plan.orderDetails["2"]?.append(contentsOf: self.firstDayCart)
+                    Plan.plan.orderDetails["3"]?.append(contentsOf: self.firstDayCart)
+                    Plan.plan.orderDetails["4"]?.append(contentsOf: self.firstDayCart)
+                    Plan.plan.orderDetails["5"]?.append(contentsOf: self.firstDayCart)
                     
                     performSegue(withIdentifier: K.navigateToPlanSetup, sender: self)
+                }
+                else{
+                    // handle error
+                }
+            }
+            
+            else {
+                
+                switch selectedDay.selectedIndex {
                     
+                case 0 :
+                    if !firstDayCart.isEmpty {
+                        selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                        menuCollectionView.reloadData()
+                        selectedDay.isEnabled = true
+                    }
+                    else {}
+                    
+                case 1 :
+                    if !secondDayCart.isEmpty {
+                        selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                        menuCollectionView.reloadData()
+                    }
+                    else {}
+                    
+                case 2 :
+                    if !thirdDayCart.isEmpty {
+                        selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                        menuCollectionView.reloadData()
+                    }
+                    else {}
+                    
+                case 3 :
+                    if !fourthDayCart.isEmpty {
+                        selectedDay.selectedIndex = selectedDay.selectedIndex + 1
+                        menuCollectionView.reloadData()
+                        continueButton.setTitle("Continue", for: .normal)
+                        continueButton.backgroundColor = #colorLiteral(red: 0.1256147027, green: 0.1457214653, blue: 0.1624999642, alpha: 1)
+                    }
+                    else {}
+                    
+                case 4 :
+                    if !fifthDayCart.isEmpty {
+                        
+                        Plan.plan.orderDetails["1"]?.append(contentsOf: self.firstDayCart)
+                        Plan.plan.orderDetails["2"]?.append(contentsOf: self.secondDayCart)
+                        Plan.plan.orderDetails["3"]?.append(contentsOf: self.thirdDayCart)
+                        Plan.plan.orderDetails["4"]?.append(contentsOf: self.fourthDayCart)
+                        Plan.plan.orderDetails["5"]?.append(contentsOf: self.fifthDayCart)
+                        
+                        performSegue(withIdentifier: K.navigateToPlanSetup, sender: self)
+                        
+                    }
+                    else {
+                        // select recommended from menu
+                    }
+                default :
+                    print("errorrrr")
                 }
-                else {
-                    // select chef's rec from menu
-                }
-            default :
-                print("errorrrr")
             }
         }
-    }
-    
 }
 
 extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -187,11 +187,11 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         switch Plan.plan.selectedCafe {
             
-        case "DD" :
+        case "Dunkin Donuts" :
             cell.itemImage.image = Images.dunkinDonutsMenuImages[indexPath.row]
-        case "CoveCoffee&Roastery" :
+        case "Cove Coffee & Roastery" :
             cell.itemImage.image = Images.coveMenuImages[indexPath.row]
-        case "PressCoffee" :
+        case "Press Coffee" :
             cell.itemImage.image = Images.pressMenuImages[indexPath.row]
         default:
             cell.itemImage.image = Images.coveMenuImages[indexPath.row]

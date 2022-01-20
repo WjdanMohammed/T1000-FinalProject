@@ -18,7 +18,9 @@ class K {
     static let navigateToPlanSetup = "planSetup1"
     static let navigateToPlanDetails = "planDetails"
     static let navigateToPlanStatus = "showStatus"
+    static let showLogInPage = "logInToCreatePlan"
     static let selectedItemCell = "selectedItemCell"
+    static let PlanItemCell = "PlanItemCell"
     static let tabBarID = "tabBarID"
     
     static let tax : Float = 1.15

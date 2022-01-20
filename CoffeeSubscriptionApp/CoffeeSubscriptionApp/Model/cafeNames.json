@@ -1,7 +1,7 @@
 [
     {
         "cafeName":"Dunkin Donuts",
-        "cafeId":"DD",
+        "cafeId":"Dunkin Donuts",
         "menu":[
             {
                 "id":"dunkinOriginalCoffee",
@@ -126,7 +126,7 @@
     },
     {
         "cafeName":"Cove Coffee & Roastery",
-        "cafeId":"CoveCoffee&Roastery",
+        "cafeId":"Cove Coffee & Roastery",
         "menu":[
             {
                 "id":"latte",
@@ -208,7 +208,7 @@
     },
     {
         "cafeName":"Press Coffee",
-        "cafeId":"PressCoffee",
+        "cafeId":"Press Coffee",
         "menu":[
             {
                 "id":"DripCoffee",

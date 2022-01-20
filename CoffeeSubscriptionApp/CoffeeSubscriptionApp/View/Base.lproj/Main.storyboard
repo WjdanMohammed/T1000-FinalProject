@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -115,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="4540.579710144928" y="97.767857142857139"/>
         </scene>
-        <!--profile-->
+        <!--Profile View Controller-->
         <scene sceneID="lpU-k7-Hsq">
             <objects>
                 <viewController modalPresentationStyle="pageSheet" id="fDG-u4-Dpf" customClass="ProfileViewController" customModule="CoffeeSubscriptionApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -264,7 +265,11 @@
                             <constraint firstItem="fO4-kL-5Lb" firstAttribute="top" secondItem="8S9-3U-Jii" secondAttribute="bottom" constant="80" id="tL9-9P-6QE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="profile" image="person.crop.circle" catalog="system" landscapeImage="person.crop.circle" selectedImage="person.crop.circle" id="TAC-7j-WB7"/>
+                    <tabBarItem key="tabBarItem" title="" id="TAC-7j-WB7">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="medium"/>
+                        <imageReference key="landscapeImage" image="person" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="person" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="authenticationView" destination="fO4-kL-5Lb" id="pfN-nc-enx"/>
                         <outlet property="profileAnimationView" destination="8S9-3U-Jii" id="B99-Kn-jpl"/>
@@ -422,6 +427,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXW-Fa-QzP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1758" y="816"/>
+        </scene>
+        <!--Plan View Controller-->
+        <scene sceneID="bc9-Tj-kWg">
+            <objects>
+                <viewController id="8Z6-eN-vdQ" customClass="PlanViewController" customModule="CoffeeSubscriptionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JPC-si-aDC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHm-eH-x6v">
+                                <rect key="frame" x="20" y="116.5" width="374" height="187.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="luI-Kn-rQX">
+                                        <rect key="frame" x="20" y="70.5" width="334" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-gg-mDR">
+                                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" name="main dark"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiX-Ax-GgK">
+                                                <rect key="frame" x="237.5" y="0.0" width="96.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="UPQ-x3-6Vh">
+                                        <rect key="frame" x="20" y="109.5" width="334" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="will be delivered at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ags-DO-snL">
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" name="main dark"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPd-0o-3ec">
+                                                <rect key="frame" x="197" y="0.0" width="137" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX5-bp-fWT">
+                                        <rect key="frame" x="20" y="20" width="90.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EW-K8-FqC">
+                                        <rect key="frame" x="150.5" y="20" width="43" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" name="Gray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="white background"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UPQ-x3-6Vh" secondAttribute="trailing" constant="20" id="HVW-Fh-PrW"/>
+                                    <constraint firstItem="uX5-bp-fWT" firstAttribute="leading" secondItem="qHm-eH-x6v" secondAttribute="leading" constant="20" id="Jdv-lQ-FHh"/>
+                                    <constraint firstItem="luI-Kn-rQX" firstAttribute="top" secondItem="1EW-K8-FqC" secondAttribute="bottom" constant="30" id="Lk2-kI-aoY"/>
+                                    <constraint firstItem="1EW-K8-FqC" firstAttribute="leading" secondItem="uX5-bp-fWT" secondAttribute="trailing" constant="40" id="OJf-nv-XMU"/>
+                                    <constraint firstItem="UPQ-x3-6Vh" firstAttribute="leading" secondItem="qHm-eH-x6v" secondAttribute="leading" constant="20" id="SDX-ue-bqx"/>
+                                    <constraint firstItem="uX5-bp-fWT" firstAttribute="top" secondItem="qHm-eH-x6v" secondAttribute="top" constant="20" id="Xqh-Wi-smt"/>
+                                    <constraint firstItem="luI-Kn-rQX" firstAttribute="leading" secondItem="qHm-eH-x6v" secondAttribute="leading" constant="20" id="ZHO-oG-SZz"/>
+                                    <constraint firstItem="UPQ-x3-6Vh" firstAttribute="top" secondItem="luI-Kn-rQX" secondAttribute="bottom" constant="20" id="p92-P1-WrL"/>
+                                    <constraint firstItem="1EW-K8-FqC" firstAttribute="top" secondItem="qHm-eH-x6v" secondAttribute="top" constant="20" id="tzL-Og-LBF"/>
+                                    <constraint firstAttribute="trailing" secondItem="luI-Kn-rQX" secondAttribute="trailing" constant="20" id="uZZ-JC-xLd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaF-oU-xJA">
+                                <rect key="frame" x="20" y="88" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yOZ-6U-qf1"/>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="qHm-eH-x6v" firstAttribute="top" secondItem="YaF-oU-xJA" secondAttribute="bottom" constant="8" id="30B-BB-Kre"/>
+                            <constraint firstItem="YaF-oU-xJA" firstAttribute="top" secondItem="yOZ-6U-qf1" secondAttribute="top" constant="44" id="DFq-bs-h2i"/>
+                            <constraint firstItem="yOZ-6U-qf1" firstAttribute="bottom" secondItem="qHm-eH-x6v" secondAttribute="bottom" constant="509" id="X3Y-pP-ziS"/>
+                            <constraint firstItem="qHm-eH-x6v" firstAttribute="leading" secondItem="yOZ-6U-qf1" secondAttribute="leading" constant="20" id="q5w-69-Xyn"/>
+                            <constraint firstItem="yOZ-6U-qf1" firstAttribute="trailing" secondItem="qHm-eH-x6v" secondAttribute="trailing" constant="20" id="sj0-bD-sgX"/>
+                            <constraint firstItem="YaF-oU-xJA" firstAttribute="trailing" secondItem="qHm-eH-x6v" secondAttribute="trailing" id="w5r-Ch-PGt"/>
+                            <constraint firstItem="YaF-oU-xJA" firstAttribute="leading" secondItem="qHm-eH-x6v" secondAttribute="leading" id="wjy-hL-JSc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="hvB-I1-uDm">
+                        <imageReference key="image" image="bag" catalog="system" symbolScale="medium"/>
+                        <imageReference key="landscapeImage" image="bag" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="bag" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="cafeName" destination="uX5-bp-fWT" id="RNr-oo-L6x"/>
+                        <outlet property="currentPlanView" destination="qHm-eH-x6v" id="uau-E8-6lZ"/>
+                        <outlet property="deliveryTime" destination="XPd-0o-3ec" id="uec-fe-GxX"/>
+                        <outlet property="planState" destination="1EW-K8-FqC" id="VON-Fa-3mG"/>
+                        <outlet property="startingDate" destination="UiX-Ax-GgK" id="PbC-fn-Cfd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPS-yD-kTb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2720.289855072464" y="815.625"/>
         </scene>
         <!-- -->
         <scene sceneID="Lj4-Ad-YXl">
@@ -1817,6 +1935,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="nxf-BI-au7" kind="relationship" relationship="viewControllers" id="0sc-qB-8vA"/>
+                        <segue destination="8Z6-eN-vdQ" kind="relationship" relationship="viewControllers" id="WMQ-vt-DBZ"/>
                         <segue destination="fDG-u4-Dpf" kind="relationship" relationship="viewControllers" id="PWn-l0-NZa"/>
                     </connections>
                 </tabBarController>
@@ -1824,11 +1943,15 @@
             </objects>
             <point key="canvasLocation" x="2720.289855072464" y="97.767857142857139"/>
         </scene>
-        <!--home-->
+        <!--Navigation Controller-->
         <scene sceneID="z4A-im-QLO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="nxf-BI-au7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" image="house" catalog="system" id="iod-hk-Ybe"/>
+                    <tabBarItem key="tabBarItem" title="" id="iod-hk-Ybe">
+                        <imageReference key="image" image="text.justify.left" catalog="system" symbolScale="medium"/>
+                        <imageReference key="landscapeImage" image="text.justify.left" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="text.justify.left" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tM2-aX-IAT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1856,15 +1979,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UyF-Zh-ucL"/>
+        <segue reference="aDR-dO-g96"/>
         <segue reference="cOq-u5-M8P"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="bag" catalog="system" width="128" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="text.justify.left" catalog="system" width="128" height="100"/>
         <namedColor name="Color-2">
             <color red="0.25099998712539673" green="0.24699999392032623" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -1878,7 +2002,7 @@
             <color red="0.86699998378753662" green="0.86699998378753662" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="main dark">
-            <color red="0.1294117719" green="0.14509806040000001" blue="0.1607843041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.1289999932050705" green="0.14499999582767487" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primary color">
             <color red="0.88200002908706665" green="0.89399999380111694" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

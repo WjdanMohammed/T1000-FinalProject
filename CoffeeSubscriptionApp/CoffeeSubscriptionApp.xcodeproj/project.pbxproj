@@ -43,6 +43,7 @@
 		ADA5689F2785DC2800DA4B7F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5689E2785DC2800DA4B7F /* MenuItem.swift */; };
 		ADC3D9E72797F0230096F826 /* MenuImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC3D9E62797F0230096F826 /* MenuImagesModel.swift */; };
 		ADC3D9E9279895F90096F826 /* UIViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */; };
+		ADDD744F2799D6E400470004 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD744E2799D6E400470004 /* PlanViewController.swift */; };
 		ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */; };
 		ADE173FB2794846200F90A3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173FA2794846200F90A3B /* ProfileViewController.swift */; };
 		ADE173FE27949E3100F90A3B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ADE173FD27949E3100F90A3B /* Lottie */; };
@@ -111,6 +112,7 @@
 		ADA5689E2785DC2800DA4B7F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		ADC3D9E62797F0230096F826 /* MenuImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImagesModel.swift; sourceTree = "<group>"; };
 		ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtention.swift; sourceTree = "<group>"; };
+		ADDD744E2799D6E400470004 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanCreationStatusViewController.swift; path = CoffeeSubscriptionApp/Controller/PlanCreationStatusViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE173FA2794846200F90A3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = CoffeeSubscriptionApp/Controller/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE174012794A1DC00F90A3B /* failureAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failureAnimation.json; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				ADA568922784502800DA4B7F /* PlanDurationViewController.swift */,
 				ADA568962784635500DA4B7F /* PlanDetailsViewController.swift */,
 				ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */,
+				ADDD744E2799D6E400470004 /* PlanViewController.swift */,
 				ADE173FA2794846200F90A3B /* ProfileViewController.swift */,
 				ADE17409279609C700F90A3B /* ProfileDetailsViewController.swift */,
 				ADE6B9E72793056B00DDC251 /* HBSegmentedControl.swift */,
@@ -448,6 +451,7 @@
 				AD0B5A272789CEA6002F0904 /* TabBarViewController.swift in Sources */,
 				ADE174082795FB1700F90A3B /* User.swift in Sources */,
 				AD7930ED278218180029230A /* SceneDelegate.swift in Sources */,
+				ADDD744F2799D6E400470004 /* PlanViewController.swift in Sources */,
 				AD769A13278AFFDB00E23ABD /* Formatter.swift in Sources */,
 				AD0B5A2B278A0E75002F0904 /* StringExtention.swift in Sources */,
 				ADA5688327831C5100DA4B7F /* HomeViewController.swift in Sources */,

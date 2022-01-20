@@ -27,8 +27,7 @@ class PlanDetailsViewController: UIViewController {
     
     @IBOutlet weak var total: UILabel!
     
-    //    var selectedItems = [MenuItem]()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,9 +36,33 @@ class PlanDetailsViewController: UIViewController {
     }
     
     @IBAction func confirmPlan(_ sender: Any) {
-        
-        DatabaseManager.createPlan()
-        performSegue(withIdentifier: K.navigateToPlanStatus, sender: self)
+
+        DatabaseManager.checkAuthentication(completion: { authenticated in
+            
+            if authenticated {
+
+                DatabaseManager.checkEligibilityToCreateAPlan(completion: { eligiable in
+                    if eligiable{
+                        DatabaseManager.createPlan()
+
+                        self.performSegue(withIdentifier: K.navigateToPlanStatus, sender: self)
+                    }
+                    else {
+
+                        let alert = UIAlertController(title: "You already have an active plan", message: "Do you want to view your plan?", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: nil))
+                        alert.addAction(UIAlertAction(title: "dismiss", style: UIAlertAction.Style.cancel, handler: nil))
+
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                })
+                
+            }
+            else {
+                self.performSegue(withIdentifier: K.showLogInPage, sender: self)
+            }
+        })
         
     }
     
@@ -48,7 +71,7 @@ class PlanDetailsViewController: UIViewController {
         
         firstDayCollectionView.delegate = self
         firstDayCollectionView.dataSource = self
-
+        
         secondDayCollectionView.delegate = self
         secondDayCollectionView.dataSource = self
         
@@ -61,9 +84,9 @@ class PlanDetailsViewController: UIViewController {
         fifthDayCollectionView.delegate = self
         fifthDayCollectionView.dataSource = self
         
-        startingDate.text = Formatter.format(date: Plan.plan.startDate)
+        startingDate.text = Plan.plan.startDate
         
-        deliveryTime.text = Formatter.format(time: Plan.plan.deliveryTime)
+        deliveryTime.text = Plan.plan.deliveryTime
         
         subTotal.text = K.priceFormatter.string(from: NSNumber(value: calculatTotal() == 0.0 ? calculatTotal() : calculatTotal() - K.deliveryFee))
         
@@ -85,7 +108,7 @@ class PlanDetailsViewController: UIViewController {
                 }
             }
         }
-
+        
         if subtotal > 0 {
             total = ( subtotal * K.tax ) + K.deliveryFee
             return total
@@ -162,11 +185,6 @@ extension PlanDetailsViewController: UICollectionViewDelegate, UICollectionViewD
             }
             return cell
         }
-        
-//        cell.itemName.text = Plan.plan.orderDetails[indexPath.row].name
-//        if let price = Plan.plan.orderDetails[indexPath.row].price {
-//            cell.itemPrice.text = K.priceFormatter.string(from: NSNumber(value: price))
-//        }
         
         
     }

@@ -12,9 +12,10 @@ class Plan {
     var userID = ""
     var selectedCafe = ""
     var planDuration = 5
-    var startDate = Date()
-    var deliveryTime = Date()
-
+    var startDate = ""
+    var startDateDateFormat = Date()
+    var deliveryTime = ""
+    var planState = ""
     var orderDetails = ["1": [MenuItem](),
                         "2": [MenuItem](),
                         "3": [MenuItem](),

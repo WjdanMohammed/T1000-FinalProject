@@ -113,6 +113,12 @@ class DatabaseManager {
                             "4":[Any](),
                             "5":[Any]()]
         
+        var planDays = [Formatter.format(date: Plan.plan.startDateDateFormat),
+                        Formatter.format(date: Plan.plan.startDateDateFormat.dayAfter),
+                        Formatter.format(date: Plan.plan.startDateDateFormat.twoDaysAfter),
+                        Formatter.format(date: Plan.plan.startDateDateFormat.threeDaysAfter),
+                        Formatter.format(date: Plan.plan.startDateDateFormat.fourDaysAfter)]
+                                                                                            
         for day in Plan.plan.orderDetails {
             
             for item in day.value{
@@ -121,7 +127,6 @@ class DatabaseManager {
                     let jsonData = try JSONEncoder().encode(item)
                     let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
                     orderDetails[day.key]?.append(jsonObject)
-                    
                 }
                 catch {
                     // handle error
@@ -140,7 +145,8 @@ class DatabaseManager {
                 "orderDetails" : orderDetails,
                 "lat" : Plan.plan.userLocation["lat"] as Any,
                 "long" : Plan.plan.userLocation["long"] as Any,
-                "orderStatus" : "Confirmed"
+                "planStatus" : "Confirmed",
+                "planState" : "active"
                 
             ]){ error in
                 if let error = error {
@@ -160,7 +166,9 @@ class DatabaseManager {
                 "orderDetails" : orderDetails,
                 "lat" : Plan.plan.userLocation["lat"] as Any,
                 "long" : Plan.plan.userLocation["long"] as Any,
-                "orderStatus" : "Confirmed"
+                "planStatus" : "Confirmed",
+                "planState" : "active",
+                "planDays" : planDays
                 
             ]) { error in
                 if let error = error {
@@ -172,6 +180,84 @@ class DatabaseManager {
             }
         }
         Plan.plan.isConfirmed = true
+        
+    }
+    
+    //MARK: Check eligibility to create a new plan
+    static func checkEligibilityToCreateAPlan(completion: @escaping( Bool ) -> Void){
+        
+        
+        let db = Firestore.firestore()
+        
+        if let uid = Auth.auth().currentUser?.uid{
+            
+            db.collection("Users").document(uid).collection("Plan").getDocuments{ querySnapshot, error in
+                
+                if error == nil {
+                    
+                    if let docs = querySnapshot?.documents, !docs.isEmpty{
+                        completion(false)
+                    }
+                    else{
+                        completion(true)
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK: get plan info
+    static func getPlanInfo(completion: @escaping( Bool ) -> Void){
+        
+        let db = Firestore.firestore()
+        
+        if let uid = Auth.auth().currentUser?.uid{
+
+            db.collection("Users").document(uid).collection("Plan").addSnapshotListener{ querySnapshot, error in
+                
+                if error != nil {
+                    print("error")
+                }
+
+                if let querySnapshotDocs = querySnapshot?.documents, !querySnapshotDocs.isEmpty {
+                    
+                    Plan.plan.selectedCafe = querySnapshotDocs[0].get("selectedCafe") as! String
+
+                    Plan.plan.deliveryTime = querySnapshotDocs[0].get("deliveryTime") as! String
+
+                    Plan.plan.startDate = querySnapshotDocs[0].get("startDate") as! String
+
+                    Plan.plan.planState = querySnapshotDocs[0].get("planState") as! String
+                    
+                    completion(true)
+                }
+                else{
+                    completion(false)
+                }
+                
+            }
+   
+        }
+        
+    }
+    //MARK: Pause plan
+    
+    static func pausePlan(){
+        
+        let db = Firestore.firestore()
+        if let uid = Auth.auth().currentUser?.uid{
+            db.collection("Users").document(uid).collection("Plan").document().updateData([
+                
+                "planState" : "paused",
+                
+            ]) { error in
+                if let error = error {
+                    print("Error updating document: \(error)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
+        }
         
     }
     

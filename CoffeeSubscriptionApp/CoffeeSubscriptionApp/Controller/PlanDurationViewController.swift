@@ -83,9 +83,11 @@ class PlanDurationViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     @IBAction func continueToPlanDetailsButtonClicked(_ sender: Any) {
         
-        Plan.plan.startDate = startingDate.date
+        Plan.plan.startDate = Formatter.format(date: startingDate.date)
         
-        Plan.plan.deliveryTime = deliveryTimePicker.date
+        Plan.plan.startDateDateFormat = startingDate.date
+        
+        Plan.plan.deliveryTime = Formatter.format(time: deliveryTimePicker.date)
         
         Plan.plan.userLocation = ["lat": mkAnnotation.coordinate.latitude,
                                   "long": mkAnnotation.coordinate.longitude]
