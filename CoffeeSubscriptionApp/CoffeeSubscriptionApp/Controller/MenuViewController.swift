@@ -196,8 +196,10 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
             cell.itemImage.image = Images.coveMenuImages[indexPath.row]
         case "Press Coffee" :
             cell.itemImage.image = Images.pressMenuImages[indexPath.row]
+//        case "Daylight Coffee" :
+//            cell.itemImage.image = Images.dayLightMenuImages[indexPath.row]
         default:
-            cell.itemImage.image = Images.coveMenuImages[indexPath.row]
+            print("menu images not found")
         }
         
         cell.itemName.text = menuItems[indexPath.row].name

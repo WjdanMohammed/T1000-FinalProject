@@ -45,6 +45,8 @@
 		ADC3D9E9279895F90096F826 /* UIViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */; };
 		ADDD744F2799D6E400470004 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD744E2799D6E400470004 /* PlanViewController.swift */; };
 		ADDD74512799EB3100470004 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD74502799EB3000470004 /* LaunchScreenViewController.swift */; };
+		ADDD7455279DFC2D00470004 /* DGHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD7454279DFC2C00470004 /* DGHomeViewController.swift */; };
+		ADDD7458279DFE3E00470004 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD7457279DFE3C00470004 /* OrderCell.swift */; };
 		ADE173F92794646700F90A3B /* PlanCreationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */; };
 		ADE173FB2794846200F90A3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE173FA2794846200F90A3B /* ProfileViewController.swift */; };
 		ADE173FE27949E3100F90A3B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ADE173FD27949E3100F90A3B /* Lottie */; };
@@ -115,6 +117,8 @@
 		ADC3D9E8279895F70096F826 /* UIViewControllerExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtention.swift; sourceTree = "<group>"; };
 		ADDD744E2799D6E400470004 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		ADDD74502799EB3000470004 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		ADDD7454279DFC2C00470004 /* DGHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DGHomeViewController.swift; path = "CoffeeSubscriptionApp/Controller/Delivery guy panel/DGHomeViewController.swift"; sourceTree = SOURCE_ROOT; };
+		ADDD7457279DFE3C00470004 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		ADE173F82794646700F90A3B /* PlanCreationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanCreationStatusViewController.swift; path = CoffeeSubscriptionApp/Controller/PlanCreationStatusViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE173FA2794846200F90A3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = CoffeeSubscriptionApp/Controller/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		ADE174012794A1DC00F90A3B /* failureAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failureAnimation.json; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		AD79312127821B970029230A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				ADDD7456279DFC4600470004 /* Delivery guy panel */,
 				ADA5688F2784277900DA4B7F /* cells */,
 				AD0B5A202789A6E3002F0904 /* SignUpViewController.swift */,
 				AD0B5A282789EB83002F0904 /* LogInViewController.swift */,
@@ -276,11 +281,20 @@
 		ADA5688F2784277900DA4B7F /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				ADDD7457279DFE3C00470004 /* OrderCell.swift */,
 				ADA5688427832ECC00DA4B7F /* CafeCell.swift */,
 				ADA5689427845C6200DA4B7F /* MenuItemCell.swift */,
 				AD0B5A1E27871975002F0904 /* SelectedItemCell.swift */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		ADDD7456279DFC4600470004 /* Delivery guy panel */ = {
+			isa = PBXGroup;
+			children = (
+				ADDD7454279DFC2C00470004 /* DGHomeViewController.swift */,
+			);
+			path = "Delivery guy panel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +466,7 @@
 				AD0B5A1F27871975002F0904 /* SelectedItemCell.swift in Sources */,
 				ADA5688527832ECC00DA4B7F /* CafeCell.swift in Sources */,
 				AD2C1A6B278DA5C200195B4C /* UIViewExtention.swift in Sources */,
+				ADDD7458279DFE3E00470004 /* OrderCell.swift in Sources */,
 				AD0B5A272789CEA6002F0904 /* TabBarViewController.swift in Sources */,
 				ADE174082795FB1700F90A3B /* User.swift in Sources */,
 				AD7930ED278218180029230A /* SceneDelegate.swift in Sources */,
@@ -459,6 +474,7 @@
 				AD769A13278AFFDB00E23ABD /* Formatter.swift in Sources */,
 				AD0B5A2B278A0E75002F0904 /* StringExtention.swift in Sources */,
 				ADA5688327831C5100DA4B7F /* HomeViewController.swift in Sources */,
+				ADDD7455279DFC2D00470004 /* DGHomeViewController.swift in Sources */,
 				ADA56899278592E200DA4B7F /* Plan.swift in Sources */,
 				ADA568932784502900DA4B7F /* PlanDurationViewController.swift in Sources */,
 				ADA5688D2784261500DA4B7F /* Constants.swift in Sources */,

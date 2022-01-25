@@ -53,7 +53,7 @@ class ProfileDetailsViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
         
-//        self.dismiss(animated: true, completion: nil)
+
     }
     
 }

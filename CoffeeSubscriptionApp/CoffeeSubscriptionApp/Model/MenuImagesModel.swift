@@ -57,4 +57,17 @@ class Images {
                                   ,UIImage(named: "icedCaramelMacchiato")
                                   ,UIImage(named: "croissant2")
     ]
+    
+    static let dayLightMenuImages = [UIImage(named: "mediumCup"),
+                                 UIImage(named: "mediumCup2"),
+                                 UIImage(named: "smallCup"),
+                                 UIImage(named: "mediumCup")
+                                 ,UIImage(named: "mediumCup2"),
+                                 UIImage(named: "mediumCup2"),
+                                 UIImage(named: "mediumCup"),
+                                 UIImage(named: "mediumCup")
+                                 ,UIImage(named: "mediumCup")
+                                 ,UIImage(named: "signature")
+                                 ,UIImage(named: "brownies")
+                                     ]
 }

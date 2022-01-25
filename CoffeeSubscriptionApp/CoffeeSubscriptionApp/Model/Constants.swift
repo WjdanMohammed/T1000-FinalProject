@@ -12,6 +12,7 @@ class K {
     static let getStarted = "getStarted"
     static let cafeCellID = "cafeCellID"
     static let itemCellID = "itemCellID"
+    static let orderCellID = "orderCellID"
     static let navigateToSignUp = "signUp"
     static let navigateToLogIn = "logIn"
     static let navigateToProfileDetails = "profileDetails"

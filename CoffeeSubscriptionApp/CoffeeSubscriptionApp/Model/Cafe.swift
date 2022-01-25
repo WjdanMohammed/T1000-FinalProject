@@ -14,3 +14,14 @@ struct Cafe : Codable{
     var cafeId : String?
     var menu : [MenuItem]?
 }
+
+
+struct Order : Codable {
+    
+    var cafe : String?
+    var deliveryTime : String?
+    var lat : Double?
+    var long : Double?
+//    var orderDetails : [MenuItem]?
+    
+}

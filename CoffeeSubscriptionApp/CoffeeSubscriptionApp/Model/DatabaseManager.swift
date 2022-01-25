@@ -113,12 +113,19 @@ class DatabaseManager {
                             "4":[Any](),
                             "5":[Any]()]
         
-        var planDays = [Formatter.format(date: Plan.plan.startDateDateFormat),
+        var firstDayOrderDetails = [Any]()
+        var secondDayOrderDetails = [Any]()
+        var thirdDayOrderDetails = [Any]()
+        var fourthDayOrderDetails = [Any]()
+        var fifthDayOrderDetails = [Any]()
+
+//
+        let planDays = [Formatter.format(date: Plan.plan.startDateDateFormat),
                         Formatter.format(date: Plan.plan.startDateDateFormat.dayAfter),
                         Formatter.format(date: Plan.plan.startDateDateFormat.twoDaysAfter),
                         Formatter.format(date: Plan.plan.startDateDateFormat.threeDaysAfter),
                         Formatter.format(date: Plan.plan.startDateDateFormat.fourDaysAfter)]
-                                                                                            
+//
         for day in Plan.plan.orderDetails {
             
             for item in day.value{
@@ -127,11 +134,84 @@ class DatabaseManager {
                     let jsonData = try JSONEncoder().encode(item)
                     let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
                     orderDetails[day.key]?.append(jsonObject)
+                    
                 }
                 catch {
                     // handle error
                 }
             }
+        }
+        
+        for day in Plan.plan.orderDetails{
+            
+            switch day.key {
+                
+            case "1" :
+                    for item in day.value {
+                        
+                        do {
+                            let jsonData = try JSONEncoder().encode(item)
+                            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                            firstDayOrderDetails.append(jsonObject)
+                        }
+                        catch {
+                            // handle error
+                        }
+                    }
+                
+                case "2" :
+                    for item in day.value {
+                        
+                        do {
+                            let jsonData = try JSONEncoder().encode(item)
+                            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                            secondDayOrderDetails.append(jsonObject)
+                        }
+                        catch {
+                            // handle error
+                        }
+                    }
+                
+            case "3" :
+                    for item in day.value {
+                        
+                        do {
+                            let jsonData = try JSONEncoder().encode(item)
+                            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                            thirdDayOrderDetails.append(jsonObject)
+                        }
+                        catch {
+                            // handle error
+                        }
+                    }
+                
+            case "4" :
+                    for item in day.value {
+                        
+                        do {
+                            let jsonData = try JSONEncoder().encode(item)
+                            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                            fourthDayOrderDetails.append(jsonObject)
+                        }
+                        catch {
+                            // handle error
+                        }
+                    }
+                
+            default :
+                    for item in day.value {
+                        
+                        do {
+                            let jsonData = try JSONEncoder().encode(item)
+                            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                            fifthDayOrderDetails.append(jsonObject)
+                        }
+                        catch {
+                            // handle error
+                        }
+                    }
+                }
+            
         }
         
         if let uid = Auth.auth().currentUser?.uid{
@@ -165,8 +245,7 @@ class DatabaseManager {
                 "lat" : Plan.plan.userLocation["lat"] as Any,
                 "long" : Plan.plan.userLocation["long"] as Any,
                 "planStatus" : "Confirmed",
-                "planState" : "active",
-                "planDays" : planDays
+                "planState" : "active"
                 
             ]) { error in
                 if let error = error {
@@ -174,9 +253,111 @@ class DatabaseManager {
                 }
 
             }
+            
+            for day in planDays.enumerated() {
+                
+                switch day.offset {
+                case 0 :
+                    db.collection("Orders").addDocument(data: [
+                        "userID" : uid,
+                        "selectedCafe" : Plan.plan.selectedCafe,
+                        "deliveryDay" : day.element,
+                        "deliveryTime" : Plan.plan.deliveryTime,
+                        "orderDetails" : firstDayOrderDetails,
+                        "lat" : Plan.plan.userLocation["lat"] as Any,
+                        "long" : Plan.plan.userLocation["long"] as Any,
+                        "deliveryStatus" : "",
+                        "planState" : "active"
+                        
+                    ]) { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                    }
+                    
+                case 1 :
+                    db.collection("Orders").addDocument(data: [
+                        "userID" : uid,
+                        "selectedCafe" : Plan.plan.selectedCafe,
+                        "deliveryDay" : day.element,
+                        "deliveryTime" : Plan.plan.deliveryTime,
+                        "orderDetails" : secondDayOrderDetails,
+                        "lat" : Plan.plan.userLocation["lat"] as Any,
+                        "long" : Plan.plan.userLocation["long"] as Any,
+                        "deliveryStatus" : "",
+                        "planState" : "active"
+                        
+                    ]) { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                    }
+                    
+                case 2 :
+                    db.collection("Orders").addDocument(data: [
+                        "userID" : uid,
+                        "selectedCafe" : Plan.plan.selectedCafe,
+                        "deliveryDay" : day.element,
+                        "deliveryTime" : Plan.plan.deliveryTime,
+                        "orderDetails" : thirdDayOrderDetails,
+                        "lat" : Plan.plan.userLocation["lat"] as Any,
+                        "long" : Plan.plan.userLocation["long"] as Any,
+                        "deliveryStatus" : "",
+                        "planState" : "active"
+                        
+                    ]) { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                    }
+                    
+                case 3 :
+                    db.collection("Orders").addDocument(data: [
+                        "userID" : uid,
+                        "selectedCafe" : Plan.plan.selectedCafe,
+                        "deliveryDay" : day.element,
+                        "deliveryTime" : Plan.plan.deliveryTime,
+                        "orderDetails" : fourthDayOrderDetails,
+                        "lat" : Plan.plan.userLocation["lat"] as Any,
+                        "long" : Plan.plan.userLocation["long"] as Any,
+                        "deliveryStatus" : "",
+                        "planState" : "active"
+                        
+                    ]) { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                    }
+                    
+                case 4 :
+                    db.collection("Orders").addDocument(data: [
+                        "userID" : uid,
+                        "selectedCafe" : Plan.plan.selectedCafe,
+                        "deliveryDay" : day.element,
+                        "deliveryTime" : Plan.plan.deliveryTime,
+                        "orderDetails" : fifthDayOrderDetails,
+                        "lat" : Plan.plan.userLocation["lat"] as Any,
+                        "long" : Plan.plan.userLocation["long"] as Any,
+                        "deliveryStatus" : "",
+                        "planState" : "active"
+                        
+                    ]) { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                        
+                    }
+                    
+                default :
+                    print("error")
+                }
+            }
         }
         Plan.plan.isConfirmed = true
-        
     }
     
     //MARK: Check eligibility to create a new plan
@@ -283,6 +464,49 @@ class DatabaseManager {
         
         if let uid = Auth.auth().currentUser?.uid {
             db.collection("Users").document(uid).delete()
+        }
+        
+    }
+    
+    
+    //MARK: get todays orders
+    
+    static func getTodaysOrders(completion: @escaping( [Order] ) -> Void){
+        
+        let db = Firestore.firestore()
+        
+        var orders = [Order]()
+        
+        db.collection("Orders").whereField("planState", isEqualTo: "active").getDocuments { querySnapshot, error in
+//        whereField("deliveryDay", isEqualTo: Formatter.format(date: Date())).
+//        whereField("planState", isEqualTo: "active").
+//        whereField("deliveryStatus", isEqualTo: "").
+            
+            
+            if error != nil {
+                print("errorrr")
+            }
+            
+            if let docs = querySnapshot?.documents{
+                print(docs[0].get("selectedCafe") as? String as Any)
+                for doc in docs{
+                    
+                    let order = Order.init(cafe: doc.get("selectedCafe") as? String,
+                                           deliveryTime: doc.get("deliveryTime") as? String,
+                                           lat: doc.get("lat") as? Double,
+                                           long: doc.get("long") as? Double
+                                           //                          ,orderDetails: docs[0].get("selectedCafe") as? [MenuItem]
+                    )
+
+                    orders.append(order)
+                }
+                
+                completion(orders)
+            }
+            else{
+                //                completion(false)
+            }
+            
         }
         
     }
